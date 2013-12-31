@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = Slashdot::VERSION
   spec.authors       = ["dtan4"]
   spec.email         = ["dtanshi45@gmail.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
-  spec.homepage      = ""
+  spec.summary       = %q{Ruby Client for Slashdot}
+  spec.description   = %q{Ruby Client for Slashdot}
+  spec.homepage      = "https://github.com/dtan4/ruby-slashdot"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)

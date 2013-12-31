@@ -1,6 +1,9 @@
-# Ruby::Slashdot
+# ruby-slashdot
+[![Build Status](https://travis-ci.org/dtan4/ruby-slashdot.png?branch=master)](https://travis-ci.org/dtan4/ruby-slashdot)
+[![Coverage Status](https://coveralls.io/repos/dtan4/ruby-slashdot/badge.png?branch=master)](https://coveralls.io/r/dtan4/ruby-slashdot?branch=master)
 
-TODO: Write a gem description
+Ruby Client for Slashdot
+
 
 ## Installation
 
@@ -18,7 +21,6 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
 
 ## Contributing
 
