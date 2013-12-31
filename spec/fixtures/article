@@ -1,0 +1,4019 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+
+
+<script id="before-content" type="text/javascript">
+(function () {
+    if (typeof window.sdmedia !== 'object') window.sdmedia = {};
+    if (typeof window.sdmedia.site !== 'object') window.sdmedia.site = {};
+
+    var site = window.sdmedia.site;
+    site.rootdir = "//slashdot.org";
+}());
+
+var pageload = {
+	pagemark: '689880430942499438',
+	before_content: (new Date).getTime()
+};
+function pageload_done( $, console, maybe ){
+	pageload.after_readycode	= (new Date).getTime();
+	pageload.content_ready_time	= pageload.content_ready - pageload.before_content;
+	pageload.script_ready_time	= pageload.after_readycode - pageload.content_ready;
+	pageload.ready_time		= pageload.after_readycode - pageload.before_content;
+	// Only report 1% of cases.
+	maybe || (Math.random()>0.01) || $.ajax({ data: {
+		op: 'page_profile',
+		pagemark: pageload.pagemark,
+		dom: pageload.content_ready_time,
+		js: pageload.script_ready_time
+	} });
+}
+</script>
+
+
+	<title>How Machine Learning Can Transform Online Dating - Slashdot</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<meta name="description" content="First time accepted submitter hrb1979 writes &#34;Thought I'd share an interview with Kang Zhao &amp;mdash; the professor behind the machine learning algorithm which could transform online dating. His algorithm takes into account both a user's tastes (in an approach similar to the Netflix recommendation eng...">
+	<meta itemprop="name" content="How Machine Learning Can Transform Online Dating - Slashdot">
+	<meta itemprop="description" content="First time accepted submitter hrb1979 writes &#34;Thought I'd share an interview with Kang Zhao &amp;mdash; the professor behind the machine learning algorithm which could transform online dating. His algorithm takes into account both a user's tastes (in an approach similar to the Netflix recommendation eng...">
+
+
+	<meta property="fb:admins" content="100000696822412">
+	<meta property="fb:page_id" content="267995220856">
+
+	<meta name="viewport" content="width=1000, user-scalable=yes, minimum-scale=0, maximum-scale=10.0" />
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+	<meta property="og:image" content="http://a.fsdn.com/sd/topics/stats_64.png">
+
+
+	<link rel="canonical" href="http://slashdot.org/story/13/12/31/1437227/how-machine-learning-can-transform-online-dating">
+
+
+<link rel="stylesheet" type="text/css" media="screen, projection" href="//a.fsdn.com/sd/classic.css?alpha_20131220" >
+<!--[if IE 8]><link rel="stylesheet" type="text/css" media="screen, projection" href="//a.fsdn.com/sd/ie8-classic.css?alpha_20131220" ><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" type="text/css" media="screen, projection" href="//a.fsdn.com/sd/ie7-classic.css?alpha_20131220" ><![endif]-->
+
+
+
+
+
+
+
+<!--  -->
+
+
+
+
+
+
+
+
+<script src="//a.fsdn.com/sd/all-minified.js?alpha_20131220" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+(function(){
+var regexp=/\s*(?:\d+|many)\s+more\s*/i;
+
+
+	var auto_more_count = 1;
+
+	function auto_more(){
+		var $more_link = $('#more-experiment a');
+		$more_link.each(function(){
+			var $lastitem = $('#firehoselist>article.fhitem:visible:last');
+			if ( Bounds.intersect(window, $lastitem) ) {
+			 // _any_ click can trigger, but click-specific ad will win
+				setTimeout(function(){ inlineAdFirehose($lastitem, 1); }, 0);
+
+				!--auto_more_count && (auto_more=undefined);
+				// don't allow a call till the next paginate gets built and |more_possible|
+				$(document).unbind('scroll', call_auto_more);
+			}
+		});
+	};
+
+	function call_auto_more(){ auto_more && auto_more(); }
+
+
+$('#more-experiment a').
+	live('more-possible', function( event ){
+		var $more_link=$(this);
+		if ( regexp.test($more_link.text()) ) {
+
+			$(document).bind('scroll', call_auto_more);
+		} else {
+			$(document).unbind('scroll', call_auto_more);
+
+		}
+	});
+})();
+</script>
+<!--[if lt IE 9]><script src="//a.fsdn.com/sd/html5.js"></script><![endif]-->
+
+
+<script type="text/javascript">
+(function() {
+    if (typeof window.janrain !== 'object') window.janrain = {};
+    if (typeof window.janrain.settings !== 'object') window.janrain.settings = {};
+
+    /* _______________ can edit below this line _______________ */
+
+    janrain.settings.tokenUrl = 'https://slashdot.org/token_callback.pl';
+    janrain.settings.type = 'embed';
+    janrain.settings.appId = 'ggidemlconlmjciiohla';
+    janrain.settings.appUrl = 'https://login.slashdot.org';
+    janrain.settings.providers = ["google","twitter","facebook", "linkedin"];
+    janrain.settings.providersPerPage = '4';
+    janrain.settings.format = 'one column';
+    janrain.settings.actionText = 'Sign in using your account with';
+    janrain.settings.showAttribution = false;
+    janrain.settings.fontColor = '#666666';
+    janrain.settings.fontFamily = 'lucida grande, Helvetica, Verdana, sans-serif';
+    janrain.settings.backgroundColor = '#ffffff';
+    janrain.settings.width = '308';
+    janrain.settings.borderColor = '#C0C0C0';
+    janrain.settings.borderRadius = '5';    janrain.settings.buttonBorderColor = '#CCCCCC';
+    janrain.settings.buttonBorderRadius = '5';
+    janrain.settings.buttonBackgroundStyle = 'gradient';
+    janrain.settings.language = 'en';
+    janrain.settings.linkClass = 'janrainEngage';
+
+    /* _______________ can edit above this line _______________ */
+
+    function isReady() { janrain.ready = true; };
+    if (document.addEventListener) {
+      document.addEventListener("DOMContentLoaded", isReady, false);
+    } else {
+      window.attachEvent('onload', isReady);
+    }
+
+    var e = document.createElement('script');
+    e.type = 'text/javascript';
+    e.id = 'janrainAuthWidget';
+
+    if (document.location.protocol === 'https:') {
+      e.src = 'https://rpxnow.com/js/lib/login.slashdot.org/engage.js';
+    } else {
+      e.src = 'http://widget-cdn.rpxnow.com/js/lib/login.slashdot.org/engage.js';
+    }
+
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(e, s);
+})();
+</script>
+
+<script type="text/javascript">
+(function() {
+    if (typeof window.janrain !== 'object') window.janrain = {};
+    if (typeof window.janrain.settings !== 'object') window.janrain.settings = {};
+    if (typeof window.janrain.settings.share !== 'object') window.janrain.settings.share = {};
+    if (typeof window.janrain.settings.packages !== 'object') janrain.settings.packages = [];
+    janrain.settings.packages.push('share');
+
+    /* _______________ can edit below this line _______________ */
+
+    janrain.settings.share.providers = ["facebook","twitter","linkedin"];
+    janrain.settings.share.providersEmail = [];
+    janrain.settings.share.modes = ["broadcast","contact"];
+    janrain.settings.share.attributionDisplay = false;
+    janrain.settings.share.message = "";
+    janrain.settings.share.title = "";
+    janrain.settings.share.url = "";
+    janrain.settings.share.description = "";
+
+    // Modal Styles
+    janrain.settings.share.modalBackgroundColor = "#000000";
+    janrain.settings.share.modalBorderRadius = "5";
+    janrain.settings.share.modalOpacity = "0.5";
+    janrain.settings.share.modalWidth = "5";
+
+    // Body Styles
+    janrain.settings.share.bodyBackgroundColor = "#009DDC";
+    janrain.settings.share.bodyBackgroundColorOverride = false;
+    janrain.settings.share.bodyColor = "#333333";
+    janrain.settings.share.bodyContentBackgroundColor = "#ffffff";
+    janrain.settings.share.bodyFontFamily = "Helvetica";
+    janrain.settings.share.bodyTabBackgroundColor = "#f8f8f8";
+    janrain.settings.share.bodyTabColor = "#000000";
+
+    // Element Styles
+    janrain.settings.share.elementBackgroundColor = "#f6f6f6";
+    janrain.settings.share.elementBorderColor = "#cccccc";
+    janrain.settings.share.elementBorderRadius = "3";
+    janrain.settings.share.elementButtonBorderRadius = "6";
+    janrain.settings.share.elementButtonBoxShadow = "3";
+    janrain.settings.share.elementColor = "#333333";
+    janrain.settings.share.elementHoverBackgroundColor = "#eeeeee";
+    janrain.settings.share.elementLinkColor = "#009DDC";
+
+    /* _______________ can edit above this line _______________ */
+
+    function isReady() { janrain.ready = true; };
+    if (document.addEventListener) {
+        document.addEventListener("DOMContentLoaded", isReady, false);
+    } else {
+        window.attachEvent('onload', isReady);
+    }
+
+    var e = document.createElement('script');
+    e.type = 'text/javascript';
+    e.id = 'janrainWidgets';
+
+    if (document.location.protocol === 'https:') {
+      e.src = 'https://rpxnow.com/js/lib/login.slashdot.org/widget.js';
+    } else {
+      e.src = 'http://widget-cdn.rpxnow.com/js/lib/login.slashdot.org/widget.js';
+    }
+
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(e, s);
+})();
+
+$(document).ready(function(){
+    if(janrain) {
+        $("a.janrain").live('click', function () {
+
+            var $anchor = $(this);
+            var provider = $anchor.attr("data-provider");
+            var url = $anchor.attr("data-url");
+            var message = $anchor.attr("data-message");
+            var title = $anchor.attr("data-title");
+
+            janrain.engage.share.reset();
+            janrain.engage.share.showProvider(provider);
+            janrain.engage.share.setTitle(title);
+            janrain.engage.share.setMessage(message);
+            janrain.engage.share.setUrl(url);
+            janrain.engage.share.show();
+            return false;
+         });
+    }
+});
+
+
+</script><link rel="top"       title="News for nerds, stuff that matters" href="//slashdot.org/" >
+<link rel="search"    title="Search Slashdot" href="//slashdot.org/search.pl">
+<link rel="alternate" title="Slashdot RSS" href="http://rss.slashdot.org/Slashdot/slashdot" type="application/rss+xml">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<!-- DoubleClick Random Number -->
+<script type="text/javascript">
+   dfp_ord=Math.random()*10000000000000000;
+   dfp_tile = 1;
+</script>
+<!-- End DoubleClick Random Number -->
+
+<script type="text/javascript">
+window.google_analytics_uacct = "UA-32013-5";
+
+var _gaq = _gaq || [];
+
+
+
+
+
+  _gaq.push(['_setAccount', 'UA-36136016-1']);
+  _gaq.push(['b._setAccount', 'UA-32013-5']);
+  _gaq.push(['_setDomainName', '.slashdot.org']);
+  _gaq.push(['b._setDomainName', '.slashdot.org']);
+
+
+		_gaq.push(['_addIgnoredRef', 'slashdot.org']);
+		_gaq.push(['b._addIgnoredRef', 'slashdot.org']);
+
+
+
+  _gaq.push(['_setCustomVar', 1, 'User Type',  'Anon', 3]);
+  _gaq.push(['b._setCustomVar', 1, 'User Type',  'Anon', 3]);
+
+	_gaq.push(['_setCustomVar', 2, 'Page','article2', 3]);
+	_gaq.push(['b._setCustomVar', 2, 'Page','article2', 3]);
+
+
+
+
+
+
+
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['b._trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+  _gaq.push(['b._trackPageLoadTime']);
+
+
+
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</head>
+<body class="anon firehose ">
+
+
+	<div id="top_parent"></div>
+	<a name="topothepage"></a>
+
+<div id="topadspace">
+	<table id="topadtable"><tr><td>
+	<div class="ad1 advertisement"><!-- ad position 1 -->
+	<!-- DoubleClick Ad Tag -->
+<div id="fad1">
+
+
+
+	<script type="text/javascript">
+	//<![CDATA[
+
+		var hint   = 'mainpage,slashdot,stats,ai';
+		var parent = 'http:/articles/13/12/31/1437227.shtml';
+
+	document.write('<script type="text/javascript" src="http://ad.doubleclick.net/adj/ostg.slashdot/none_p1_leader;pg=article;sid=13/12/31/1437227;logged_in=0;dcopt=ist;tile='+dfp_tile+';sz=728x90;tpc=slashdot;tpc=stats;tpc=ai;u=20131231_how-machine-learning-can-transform-online-dating_stats;ord='+dfp_ord+'?"><\/script>');
+		dfp_tile++;
+	//]]>
+	</script>
+
+
+</div>
+<!-- End DoubleClick Ad Tag --></div>
+	</td>
+	<td>
+
+	<div id="hubad">
+	<!-- begin ad tag (tile=1) -->
+	<script type="text/javascript">
+	//<![CDATA[
+		document.write('<script type="text/javascript" src="http://ad.doubleclick.net/adj/ostg.slashdot/sd_hub_icon;tile=' + dfp_tile + ';sz=200x90;ord=' + dfp_ord + '?"><\/script>');
+		dfp_tile++;
+	//]]>
+	</script>
+	<noscript><a href="http://ad.doubleclick.net/jump/ostg.slashdot/sd_hub_icon;tile=1;sz=200x90;ord=123456789?" target="_blank" ><img src="http://ad.doubleclick.net/ad/ostg.slashdot/sd_hub_icon;tile=1;sz=200x90;ord=123456789?" border="0" alt="" /></a></noscript>
+	<!-- end ad tag -->
+	</div>
+
+</td></tr></table>
+</div>
+
+
+	<header class="col_wrapper container clearfix h">
+            <hgroup>
+                <section class="grid_9">
+			<div id="logo" >
+				<a href="//slashdot.org"><span>Slashdot</span></a>
+        			<div id="jump" class="hide">
+                			<a href="#main-articles">Stories</a><br>
+                			<a href="#blocks">Slash Boxes</a><br>
+                			<a href="#comments">Comments</a>
+        			</div>
+			</div>
+         <a class='data-title' href='/slash-stats/week' id='sg_hof_mvtest_title' onclick="showHof('week'); return false;"><span class='ui-icon medal ico-w'></span></a>
+
+
+
+			<form id="search" method="get" action="//slashdot.org/index2.pl">
+				<input type="text" name="fhfilter" value="" id="searchquery">
+				<span class="ui-icon search"></span>
+				<input type="submit" value="Search">
+
+			</form>
+
+
+                </section>
+                <nav role="top-navigation" class="grid_15">
+		<ul class="dropnav">
+
+	<li >
+		<a href="//slashdot.org/my/newuser"   onclick="getModalPrefs('newUserModal', 'Create Account', 1); $('#modal_box').addClass('join'); return false;">Join</a>
+
+	</li>
+
+	<li >
+		<a href="//slashdot.org/my/login"   onclick="show_login_box(); return false;">Login</a>
+
+	</li>
+
+	<li >
+		<a href="//slashdot.org/submission"    title="Submit a Story to Slashdot">Submit</a>
+
+	</li>
+
+	<li >
+		<a href="http://slashdotheadlines.p.slashdot.org/slashdot_daily_newsletter.html"   onclick="newsletterSignup(); return false;" title="Subscribe to Newsletter">Newsletter</a>
+
+	</li>
+
+	<li >
+		<a href="//slashdot.org/job_board.pl"   >Jobs</a>
+
+	</li>
+
+	<li class="droparrowneeded">
+		<a href="//slashdot.org/topic"   >Channels</a>
+
+			<ul>
+
+				<a href="//slashdot.org/topic/bi"   >SlashBI</a>
+
+				<a href="//slashdot.org/topic/cloud"   >SlashCloud</a>
+
+				<a href="//slashdot.org/topic/datacenter"   >SlashDataCenter</a>
+
+				<a href="//slashdot.org/topic/careers"   >SlashCareers</a>
+
+			</ul>
+
+	</li>
+
+	<li >
+		<a href="//tv.slashdot.org" class="btn link slashtvico"  ><span>SlashTV</span></a>
+
+	</li>
+
+</ul>
+
+
+<!-- dropnavstyle begin -->
+<style type="text/css">
+
+.dropnav{
+	border:none;
+	border:0px;
+	margin:0px;
+	padding:0px;
+	font: "Arial, sans-serif;
+	font-size:1em;
+	font-weight:bold;
+	list-style:none;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	}
+.dropnav ul{
+	padding-top:10px;
+	background:none;
+	height:25px;
+	list-style:none;
+	margin:0;
+	padding:0;
+	}
+	.dropnav li{
+		float:right;
+		padding:0px;
+		}
+	.dropnav li a{
+		background:none bottom right no-repeat;
+		color:#ffffff;
+		display:block;
+		font-weight:normal;
+		line-height:25px;
+		margin:0px;
+		padding:0px 5px;
+		padding-bottom: 6px;
+		text-align:center;
+		text-decoration:none;
+		}
+		.dropnav li a:hover, .dropnav ul li:hover a{
+			 /* background: #005555 bottom center no-repeat; */
+			  color:#FFFFFF;
+			  text-decoration:underline;
+			}
+	.dropnav li ul{
+		background:#004242;
+		display:none;
+		height:auto;
+		min-width:100px;
+		margin:0px;
+		padding:0px;
+		border:0px;
+		position:absolute;
+		z-index:200;
+		/*top:1em;
+		/*left:0;*/
+		}
+	.dropnav li:hover ul{
+		display:block;
+
+		}
+	.dropnav li li {
+		display:block;
+		float:none;
+		min-width:100px;
+		margin:0px;
+		padding:0px;
+		}
+	.dropnav li:hover li a{
+		background:none;
+
+		}
+	.dropnav li ul a{
+		display:block;
+		height:25px;
+		font-size:12px;
+		font-style:normal;
+		margin:0px;
+		padding:0px 10px 0px 15px;
+		text-align:left;
+		}
+		.dropnav li ul a:hover, .dropnav li ul li:hover a{
+		 	background:#005555 center left no-repeat;
+			border:0px;
+			color:#ffffff;
+			text-decoration:none;
+			}
+	.dropnav p{
+		clear:left;
+		}
+
+	.dropnav li.droparrowneeded>a:after {
+		content: "\25BE";
+		margin-left: 5px;
+		text-decoration: none;
+	}
+
+
+</style>
+<!-- dropnavstyle end -->
+
+                </nav>
+            </hgroup>
+        </header>
+
+
+
+
+	<section>
+
+      <div id='embbeded_login_modal' class="hide">
+<form action="https://slashdot.org/my/login" method="post" onsubmit="if (global_returnto) { this.returnto.value = global_returnto }" class="embedded"><fieldset style="-webkit-border-radius:10px 10px 0 0;border-radius:10px 10px 0 0;-moz-border-radius:10px 10px 0 0">
+<div style='height:25px;'>&nbsp;</div>
+    <input type="hidden" name="returnto" value="">
+    <input type="hidden" name="op" value="userlogin">
+    <p>
+        <label class="fleft" for="unickname">Nickname:</label>
+        <input type="text" name="unickname" value="">
+    </p>
+    <p>
+        <label class="fleft" for="upasswd">Password:</label>
+        <input type="password" name="upasswd" placeholder="6-20 characters long">
+    </p>
+    <label class="checkbox"><input type="checkbox" name="login_temp" value="yes"> Public Terminal</label>
+    <br>
+    <hr>
+    <input type="submit" name="userlogin" value="Log In" class="fno"> <a href="//slashdot.org/my/mailpassword" class="btn link" onclick="getModalPrefs('sendPasswdModal', 'Retrieve Password', 1); return false;">Forgot your password?</a>
+</fieldset></form>
+
+                <form action="//slashdot.org/login.pl" method="post"><fieldset style="-webkit-border-radius:0 0 10px 10px;border-radius:0 0 10px 10px;-moz-border-radius:0 0 10px 10px">
+                <input type="hidden" name="op" value="claim_openid">
+                <input type="hidden" name="openid_login" value="1">
+                <label for="openid_url" class="openid_url">
+                <input type="text" name="openid_url" value="http://" size="32" maxlength="255">
+                </label><br>
+                <input type="submit" value="Log in with OpenID" class="button fno" style="width:230px;">
+                </fieldset></form>
+                <div id="janrainEngageEmbed"></div>
+
+
+<div class="actions">
+ <a class="ico close" onclick="hide_login_slider();" href=""><span>Close</span></a>
+</div>
+</div>
+
+
+		<a name="main-articles"></a><!-- body begin -->
+
+
+
+
+
+
+
+
+	<style type="text/css">
+menu, menu * {
+	text-decoration:none;
+}
+
+menu[type=context] {
+	display:none;
+	position:absolute;
+	z-index:10000;
+}
+
+menu[type=context]:not(.brief) {
+	background-color:#dfdfdf;
+	margin:0;
+	padding:2px 0.5em;
+	border-style:solid;
+	border-width:1px;
+	border-color:#eeeeee #aaaaaa #aaaaaa #eeeeee;
+	-moz-border-radius-topright:.7em;
+	-webkit-border-top-right-radius: 0.7em 0.7em;
+}
+
+menu.full[type=context] > a.slash-hover:first-child {
+	-moz-border-radius-topright:.6em;
+	-webkit-border-top-right-radius: 0.6em 0.6em;
+}
+
+
+
+menu.brief[type=context] > a {
+	-moz-border-radius:.6em;
+	-webkit-border-radius: 0.6em;
+	color:#ffffff;
+	background-color:#000000;
+}
+
+/*
+span.briefmenu a.tag:not(.datatype) {
+    padding-left:.5em;
+}
+*/
+
+
+
+
+/* #tag-menu a, #feedback-menu a  { */
+menu.tag-menu a {
+	display:list-item;
+	list-style:none;
+	text-align:left;
+	font-weight:bold;
+	color:black;
+	padding:0.1em 0.5em;
+	margin:-0.1em -0.5em;
+	cursor:pointer;
+}
+
+
+.tags .edit-bar { position:relative; }
+article aside .share .addthis_toolbox { display:block; width:60px; float:left; }
+article aside.view_mode .share { min-width:120px; padding-top:.5em; }
+#firehose.list article header h2 {padding-left: 20px; !important}
+.novote .vote { display:none; }
+.vote > a, .votedup > a, .voteddown > a {border-width:1px; border-style:solid; border-color:rgba(0,0,0,0.25); display:block; height:22px; width:22px; margin:-2px 3px 0 0; color:rgb(255,255,255); text-decoration:none; line-height:22px; text-align:center; font-weight:bold; font-size:14px; float:left; border-width:1px; border-style:solid; border-color:rgba(0,0,0,0.5); }
+.vote > a, .votedup > a, .voteddown > a {color:rgb(0,0,0);}
+article.fhitem-submission h2 .vote > a, article.fhitem-submission h2 .votedup > a, article.fhitem-submission h2 .voteddown > a { border-color:rgba(0,0,0,0.15); }
+.vote .up, .vote .down, .votedup .up, .votedup .down, .voteddown .up, .voteddown .down { border-radius: 4px; -moz-border-radius: 4px; -webkit-border-radius: 4px; text-shadow:0 0 2px #000000; }
+article:not(.fhitem-story) .vote .up,article:not(.fhitem-story) .vote .down,article:not(.fhitem-story) .votedup .up,article:not(.fhitem-story) .votedup .down,article:not(.fhitem-story) .voteddown .up,article:not(.fhitem-story) .voteddown .down { text-shadow:none !important; }
+.voteddown .down, .votedup .up { text-indent:2px; line-height:24px; }
+article:not(.fhitem-story) .votedup .up,article:not(.fhitem-story) .voteddown .down {background: rgb(174,174,174);background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(174,174,174)), to(rgb(193,193,193)));background-image: -moz-linear-gradient(100% 100% 90deg,rgb(193,193,193), rgb(174,174,174) 100%);color:rgb(0,0,0);}
+article.fhitem-story .votedup .up,article.fhitem-story .voteddown .down {background: rgb(0,66,66);background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(0,53,53)), to(rgb(0,102,102)));background-image: -moz-linear-gradient(100% 100% 90deg,rgb(0,102,102), rgb(0,53,53) 100%);}
+
+
+
+
+
+#tag-menu span.var-tag {
+font-weight:normal;
+color:#444444;
+}
+
+menu.reasons-menu a {
+padding:0 .25em 0 .25em;
+font-size:80%;
+-moz-border-radius:.5em;
+-webkit-border-radius:.5em;
+cursor:pointer;
+}
+
+menu.reasons-menu a:hover {
+background:rgb(153,153,153);
+background:-moz-linear-gradient(100% 100% 90deg, rgb(102,102,102), rgb(153,153,153) 70%) repeat scroll 0 0 rgb(102,102,102);
+background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(153,153,153)), to(rgb(102,102,102)));
+color:#fff;
+text-decoration:none;
+font-weignt:normal;
+}
+
+article.fhitem-story menu.reasons-menu a:hover {
+background:#002323 !important;
+background:-moz-linear-gradient(100% 100% 90deg, #002323, #005353 70%) repeat scroll 0 0 #002323 !important;
+background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#005353), to(#002323)) !important;
+}
+
+
+menu.reasons-menu {
+	display:none;
+	margin:0;
+	padding:0;
+}
+
+div.fhitem h3 menu.reasons-menu {
+margin:0.25em 0 0;
+}
+
+div.fhitem h3 menu.reasons-menu a.tag {
+font-size:.8em;
+}
+
+#tag-menu a.slash-hover,
+#feedback-menu a.slash-hover,
+
+.tag-display span.tag:hover,
+.tag-display span.tag.trigger {
+	color:white;
+	background-color:rgb(0, 85, 85);
+}
+
+#tag-menu a.slash-hover span.var-tag {
+	color:#eee;
+}
+
+.tag-entry.default {
+        color:#ccc;
+}
+
+.brief .nix {
+	margin-top:-1.35em;
+	margin-left:0px;
+	margin-top:-1.15em;
+	text-decoration:none;
+	line-height:1.35em;
+	padding:0 2px;
+	-moz-border-radius:.6em 0 0 .6em;
+	-webkit-border-radius:.6em 0 0 .6em;
+	-o-border-radius:.6em 0 0 .6em;
+	border-radius:.6em 0 0 .6em;
+    color:#fff !important;
+    background:transparent !important;
+}
+
+.brief .nix:hover {
+    background:rgb(153,153,153) !important;
+    background:-moz-linear-gradient(100% 100% 90deg, rgb(102,102,102), rgb(153,153,153) 70%) repeat scroll 0 0 rgb(102,102,102) !important;
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(153,153,153)), to(rgb(102,102,102))) !important;
+}
+
+</style>
+
+<menu id="nix-reasons" style="display:none">
+	<a class="tag">binspam</a><a class="tag">dupe</a><a class="tag">notthebest</a><a class="tag">offtopic</a><a class="tag">slownewsday</a><a class="tag">stale</a><a class="tag">stupid</a>
+</menu>
+<menu id="nod-reasons" style="display:none">
+	<a class="tag">fresh</a><a class="tag">funny</a><a class="tag">insightful</a><a class="tag">interesting</a><a class="tag">maybe</a>
+</menu>
+<menu id="comment-nix-reasons" style="display:none">
+	<a class="tag">offtopic</a><a class="tag">flamebait</a><a class="tag">troll</a><a class="tag">redundant</a><a class="tag">overrated</a>
+</menu>
+<menu id="comment-nod-reasons" style="display:none">
+	<a class="tag">insightful</a><a class="tag">interesting</a><a class="tag">informative</a><a class="tag">funny</a><a class="tag">underrated</a>
+</menu>
+
+<menu id="tag-nod-reasons" style="display:none">
+	<a class="tag">descriptive</a>
+</menu>
+<menu id="feedback-menu" class="tag-menu" type="context">
+	<a class="tag">typo</a><a class="tag">dupe</a><a class="tag">error</a>
+</menu>
+<menu id="tag-menu" class="tag-menu none" type="context">
+
+<!--	<a data-op="!" class="nix">!<span class="var-tag hide"></span></a>-->
+
+</menu>
+
+<script type="text/javascript">
+$(function(){
+var $CURRENT_MENU, $TAG_MENU=$('#tag-menu'), NOTNOT=/^!!/, IE7=/^7\.0/, TAG_PREFIX=/^\/tag\//;
+
+function get_tag_name( $tag ){
+	return ($tag.attr('href') || '').replace(TAG_PREFIX, '') || $tag.text().toLowerCase();
+}
+
+function trigger_menu( e, selector, $menu, menu_content ){
+	var $target=$(original_target(e, selector)), in_use=$target.is('.trigger');
+	if ( $CURRENT_MENU ) {
+		$CURRENT_MENU.menu('cancel', e);
+		$CURRENT_MENU = null;
+	}
+
+	if ( !in_use ) {
+		menu_content && $menu.stop(true, true).hide().html(menu_content);
+		($CURRENT_MENU=$menu).menu('context', e);
+	}
+	return !in_use;
+}
+
+function open_menu( trigger, $menu ){
+	var $trigger=$(trigger), $fhitem=$trigger.closest('.fhitem');
+	$fhitem.length && user_intent('interest', $fhitem[0]);
+
+	$menu.appendTo(document.body).css({ opacity:0 }).show();
+
+	var 	right	= $fhitem.offset().left + $fhitem.width(),
+		global	= $trigger.offset(),
+		local	= $menu.offsetParent().offset();
+
+	// Ugly IE position hack required:
+	$.browser.msie && IE7.test($.browser.version) && (local.top = 0);
+
+	// pin the menu (horizontally) on-screen
+	global.left = Math.min(global.left, right-$menu.width());
+
+	$trigger.addClass('trigger');
+	$menu.css({
+		position:	'absolute',
+		top:		global.top - local.top + $trigger.height(),
+		left:		global.left - local.left,
+		opacity:	1
+	});
+}
+
+function close_menu( trigger, $menu ){
+	$menu.hide();
+	$(trigger).removeClass('trigger');
+	($CURRENT_MENU===$menu) && ($CURRENT_MENU=false);
+}
+
+/* T2 tag context-menu */
+var $TAG_MENU=$('#tag-menu'), NOTNOT=/^!!/;
+
+
+    var user_is_admin = 0;
+
+
+
+$('a[rel=tag]').live('mousedown',function(ea){
+    window.open(this.href);
+    return false;
+})
+
+$('.tag-bar .disagree').live('mousedown',function(ee){
+	var fhitem = $(original_target(ee)).closest('.fhitem')[0],
+		command = ('!' + $(original_target(ee)).attr("data-tag")).replace(NOTNOT, '');
+    try { Tags.submit(fhitem, command); } catch ( err ) {  }
+    return false;
+})
+
+
+
+$('a[rel=tag]').
+	live('mousedown', function( e ){
+
+            return true;
+
+
+	}).
+	live('click', function( e ){
+		if ( !logged_in ) {
+			var	target	= original_target(e),
+				tag	= $(target).text();
+			addfhfilter(tag);
+		}
+		e.preventDefault();
+		return false;
+	});
+
+$TAG_MENU.menu({
+	cssNamespace: 'slash',
+	liveTriggers: true,
+	clickDuration: 300,
+
+	start: function( e, ui ){
+		var	$tag	= $(ui.trigger),
+			tag	= get_tag_name($tag),
+			context	= firehose_settings && firehose_settings.viewtitle;
+
+		// Insert the tagname into the menu items where needed.
+		$TAG_MENU.find('span.var-tag').text(tag);
+		$TAG_MENU.find('a.nix').attr('title','not ' + tag);
+
+
+			// non-admins may only delete their own tags
+		$TAG_MENU.find('a:[data-op="-"]').toggle($tag.is('.my'));
+
+
+		// *tagname* in *viewtitle*
+		$TAG_MENU.find('a:[data-op="="]').toggle(!!context);
+		context && $TAG_MENU.find('span.var-view').text(context);
+
+		open_menu($tag, $TAG_MENU);
+	},
+
+	select: function( e, ui ){
+		var	$tag	= $(ui.trigger),
+			tag	= get_tag_name($tag),
+			op	= $(ui.select).attr('data-op'),
+			fhitem,
+			command;
+
+		// Global for positioning other things.
+		$related_trigger = $tag;
+
+		switch ( op ) {
+			case '=':
+				addfhfilter(tag);
+				break;
+
+			default:
+				fhitem = $tag.closest('.fhitem')[0];
+				command = (op + tag).replace(NOTNOT, '');
+				try { Tags.submit(fhitem, command); } catch ( err ) {  }
+				break;
+		}
+	},
+
+	stop: function( e, ui ){ close_menu(ui.trigger, $TAG_MENU); }
+});
+
+
+
+
+/* T2 feedback context-menu */
+
+
+
+/* T2 datatype context-menu (admin-only) */
+
+
+
+
+
+
+});
+</script>
+
+
+
+
+								  <div class="col_1">
+									<nav role="sections" id="links" class="left_menu">
+
+										 <ul class="menu" id="fhtablist_new">
+
+
+
+
+
+
+
+
+
+
+
+				<li class="active Stories">
+
+
+
+				<a href="//slashdot.org/stories">Stories</a>
+				<span></span>
+				</li>
+
+
+
+
+
+				<li class="Submissions">
+
+				<a href="//slashdot.org/recent">Submissions</a>
+
+				</li>
+
+
+
+
+
+				<li class="Popular">
+
+				<a href="//slashdot.org/popular">Popular</a>
+
+				</li>
+
+
+
+
+
+				<li class="Blog">
+
+				<a href="//slashdot.org/blog">Blog</a>
+
+				</li>
+
+
+	</ul>
+
+										<h4 class="hide" id="links-sections-title"  class='active'>
+
+				<a class="data-title" href="//slashdot.org" >Slashdot</a>
+
+
+				<script type="data">{ color: "", viewname: "stories", filter: "", name: "Main", id: 13 }</script>
+
+
+		</h4>
+
+
+
+
+		<ul id="firehose-sections" role="sections" class="left_menu">
+
+
+	<li class="enhancedspacer"></li>
+
+
+
+
+
+		<li class="" id="fhsection-askslashdot">
+			<a id="fhsectiontitle-4" class="data-title" href="//ask.slashdot.org">Ask Slashdot</a>
+
+		</li>
+
+
+
+
+
+
+		<li class="" id="fhsection-bookreview">
+			<a id="fhsectiontitle-6" class="data-title" href="//books.slashdot.org">Book Reviews</a>
+
+		</li>
+
+
+
+
+
+
+		<li class="" id="fhsection-games">
+			<a id="fhsectiontitle-10" class="data-title" href="//games.slashdot.org">Games</a>
+
+		</li>
+
+
+
+
+
+
+		<li class="" id="fhsection-idle">
+			<a id="fhsectiontitle-28" class="data-title" href="//idle.slashdot.org">Idle</a>
+
+		</li>
+
+
+
+
+
+
+		<li class="" id="fhsection-yro">
+			<a id="fhsectiontitle-17" class="data-title" href="//yro.slashdot.org">YRO</a>
+
+		</li>
+
+
+	<li class="enhancedspacer"></li>
+
+
+
+
+
+
+		<li class="" id="fhsection-cloud">
+			<a id="fhsectiontitle-cloud" class="data-title" href="//slashdot.org/stories/cloud">Cloud</a>
+
+		</li>
+
+
+
+
+
+
+		<li class="" id="fhsection-hardware">
+			<a id="fhsectiontitle-21" class="data-title" href="//hardware.slashdot.org">Hardware</a>
+
+		</li>
+
+
+
+
+
+
+		<li class="" id="fhsection-linux">
+			<a id="fhsectiontitle-19" class="data-title" href="//linux.slashdot.org">Linux</a>
+
+		</li>
+
+
+
+
+
+
+		<li class="" id="fhsection-it">
+			<a id="fhsectiontitle-18" class="data-title" href="//it.slashdot.org">Management</a>
+
+		</li>
+
+
+
+
+
+
+		<li class="" id="fhsection-mobile">
+			<a id="fhsectiontitle-29" class="data-title" href="//mobile.slashdot.org">Mobile</a>
+
+		</li>
+
+
+
+
+
+
+		<li class="" id="fhsection-science">
+			<a id="fhsectiontitle-14" class="data-title" href="//science.slashdot.org">Science</a>
+
+		</li>
+
+
+
+
+
+
+
+		<li class="" id="fhsection-security">
+			<a id="fhsectiontitle-security" class="data-title" href="//slashdot.org/stories/security">Security</a>
+
+		</li>
+
+
+
+
+
+
+
+		<li class="" id="fhsection-storage">
+			<a id="fhsectiontitle-storage" class="data-title" href="//slashdot.org/stories/storage">Storage</a>
+
+		</li>
+
+
+	</ul>
+									</nav>
+								  </div>
+
+								  <div class="col_2">
+								     <section id="content" class="grid_24 a2 ">
+									<section id="firehose" class="nothumbs">
+
+
+									    <div id="firehoselist" class="fhroot fleft  grid_24">
+
+										 <article id="firehose-54845787" data-fhid="54845787" data-fhtype="story" class="fhitem fhitem-story article usermode thumbs grid_24">
+<span class="sd-info-block" style="display: none">
+	<span class="sd-key-firehose-id">54845787</span>
+	<span class="type">story</span>
+
+</span>
+
+
+
+
+
+
+
+	<header>
+
+
+			<span class="topic" id="topic-54845787">
+				<a href="//slashdot.org/index2.pl?fhfilter=stats" onclick="return addfhfilter('stats');">
+
+				<img src="//a.fsdn.com/sd/topics/stats_64.png" width="64" height="64" alt="Stats" title="Stats">
+
+		</a>
+
+
+
+
+
+
+
+
+		<a href="//slashdot.org/index2.pl?fhfilter=ai" onclick="return addfhfilter('ai');">
+
+				<img src="//a.fsdn.com/sd/topics/ai_64.png" width="64" height="64" alt="AI" title="AI">
+
+		</a>
+			</span>
+
+
+		<h2 class="story">
+
+
+
+			<span id="title-54845787"> <a   href="//slashdot.org/story/13/12/31/1437227/how-machine-learning-can-transform-online-dating">How Machine Learning Can Transform Online Dating</a></span>
+
+
+			<span class="comments commentcnt-54845787" >85</span>
+
+
+
+		</h2>
+		<div class="details" id="details-54845787">
+
+		Posted
+		by
+
+
+
+			<a href="http://www.monkey.org/~timothy/" rel="nofollow">timothy</a>
+
+
+
+
+
+
+	<time id="fhtime-54845787" datetime="on Tuesday December 31, 2013 @09:37AM">on Tuesday December 31, 2013 @09:37AM</time>
+
+
+		<br>from the it-can-please-hurry-up-while-I'm-in-my-30s dept.
+
+	</div>
+	</header>
+
+	<div class="body" id="fhbody-54845787">
+
+
+
+
+			<div id="text-54845787" class="p">
+			First time accepted submitter hrb1979 writes <i>"Thought I'd share <a href="http://www.datascienceweekly.org/blog/7-how-machine-learning-can-transform-online-dating-kang-zhao-interview">an interview</a> with <a href="http://tippie.uiowa.edu/people/profile/profile.aspx?id=1250744">Kang Zhao</a> &mdash; the professor behind the machine learning algorithm which could transform online dating. His algorithm takes into account both a user's tastes (in an approach similar to the Netflix recommendation engine) and their attractiveness (by analyzing how many responses they get) &mdash; enabling the machine to 'learn' and hence propose higher potential matches. His research was recently covered in both <a href="http://www.forbes.com/sites/daviddisalvo/2013/12/07/why-the-future-of-online-dating-relies-on-ignoring-you">a Forbes' article</a> and the <a href="http://www.technologyreview.com/view/521826/the-online-dating-engine-that-assesses-your-taste-in-the-opposite-sex-and-whether-they">MIT Technology Review</a>, though this interview provides more depth and color."</i>
+
+			</div>
+
+
+
+
+
+
+
+	</div>
+	<aside class="grid_24 view_mode">
+
+			<div class="grid_12 cc">
+				<p>
+
+
+				<span class="sharethisawrp">
+					<span id="sharethis-54845787" class="">
+
+
+
+
+
+
+
+
+		<a class="janrain t" href="#" data-provider="twitter" data-message="How Machine Learning Can Transform Online Dating @slashdot" data-url="http://slashdot.org/story/13/12/31/1437227/how-machine-learning-can-transform-online-dating" data-title="How Machine Learning Can Transform Online Dating">twitter</a>
+		<a class="janrain f fb" href="#" data-provider="facebook" data-url="http://slashdot.org/story/13/12/31/1437227/how-machine-learning-can-transform-online-dating" data-message="How Machine Learning Can Transform Online Dating" data-title="How Machine Learning Can Transform Online Dating">facebook</a>
+        	<a class="janrain l" href="#" data-provider="linkedin" data-url="http://slashdot.org/story/13/12/31/1437227/how-machine-learning-can-transform-online-dating" data-message="How Machine Learning Can Transform Online Dating" data-title="How Machine Learning Can Transform Online Dating">linkedin</a>
+	        <a class="g" href="http://plus.google.com/share?url=http://slashdot.org/story/13/12/31/1437227/how-machine-learning-can-transform-online-dating" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><img src="http://www.gstatic.com/images/icons/gplus-16.png" alt="Share on Google+"/></a>
+
+
+
+					</span>
+				</span>
+
+				</p>
+			</div>
+        <div class="grid_24 tright tw">
+			<span class="tright tags">
+
+			</span>
+        </div>
+
+
+
+
+
+
+
+
+        <section class="grid_24" id="newa2footerv2">
+            <div class="grid_6 pr">
+                <h3><a title="Previous story" href="//entertainment.slashdot.org/story/13/12/31/1353237/the-hobbit-and-game-of-thrones-top-most-pirated-lists-of-2013?sdsrc=prev">&larr;</a></h3>
+            </div>
+            <div class="grid_12 rl">
+                <h3>You may like to read:</h3>
+            </div>
+            <div class="grid_6 ns">
+                <h3><a title="Next story" href="//it.slashdot.org/story/13/12/31/1449248/linux-distributions-storing-wi-fi-passwords-in-plain-text?sdsrc=next">&rarr;</a></h3>
+            </div>
+
+
+            <div class="grid_6">
+                <span class="c">
+					<a href="//entertainment.slashdot.org/story/13/12/31/1353237/the-hobbit-and-game-of-thrones-top-most-pirated-lists-of-2013?sdsrc=prev"><em>The Hobbit</em> and <em>Game of Thrones</em> Top Most Pirated Lists of 2013 </a>
+				</span>
+            </div>
+            <div class="grid_12">
+                <span class="c">
+
+
+
+
+
+
+                                                                                                        <h3><a href="//slashdot.org/story/13/12/18/1415215/bitcoin-exchange-value-halves-after-chinese-ban?sdsrc=popbyskid">Bitcoin Exchange Value Halves After Chinese Ban</a><br></h3>
+                                                                                                        <h3><a href="//slashdot.org/story/13/12/25/0242207/netflix-non-a-players-unworthy-of-jobs?sdsrc=popbyskid">Netflix: Non-'A' Players Unworthy of Jobs</a><br></h3>
+                                                                                                        <h3><a href="//slashdot.org/story/13/11/27/1722210/bitcoin-tops-1000-for-the-first-time?sdsrc=popbyskid">Bitcoin Tops $1,000 For the First Time</a><br></h3>
+                                                                                                        <h3><a href="//slashdot.org/story/13/12/16/2257240/drm-has-always-been-a-horrible-idea?sdsrc=popbyskid">DRM Has Always Been a Horrible Idea</a><br></h3>
+                                                                                                        <h3><a href="//slashdot.org/story/13/11/19/0324242/us-government-embraces-bitcoin-in-hearing-on-virtual-currency?sdsrc=popbyskid">US Government Embraces Bitcoin in Hearing on Virtual Currency</a><br></h3>
+
+
+
+						<h3><a href="//slashdot.org/submission/3230583/how-machine-learning-can-transform-online-dating?sdsrc=rel">Submission: How Machine Learning Can Transform Online Dating</a></h3>
+
+				</span>
+            </div>
+            <div class="grid_6">
+                <span class="c">
+
+						<a href="//it.slashdot.org/story/13/12/31/1449248/linux-distributions-storing-wi-fi-passwords-in-plain-text?sdsrc=next">Linux Distributions Storing Wi-Fi Passwords In Plain Text</a>
+
+				</span>
+            </div>
+        </section>
+
+
+
+	</aside>
+
+
+
+</article>
+									    </div>
+
+
+									</section>
+
+									<aside id="slashboxes">
+
+										  <div class="railad"><div class="ad83 advertisement"><!-- ad position 83 -->
+	<!-- DoubleClick Ad Tag -->
+<div id="fad83">
+
+
+
+	<script type="text/javascript">
+	//<![CDATA[
+
+		var hint   = 'mainpage,slashdot,stats,ai';
+		var parent = 'http:/articles/13/12/31/1437227.shtml';
+
+	document.write('<script type="text/javascript" src="http://ad.doubleclick.net/adj/ostg.slashdot/none_p83_medrec;pg=article;sid=13/12/31/1437227;logged_in=0;dcopt=ist;tile='+dfp_tile+';sz=300x250,300x600;tpc=slashdot;tpc=stats;tpc=ai;u=20131231_how-machine-learning-can-transform-online-dating_stats;ord='+dfp_ord+'?"><\/script>');
+		dfp_tile++;
+	//]]>
+	</script>
+
+
+</div>
+<!-- End DoubleClick Ad Tag --></div></div>
+										  <div id="slashboxesin" class="yui-b">
+
+
+
+										  </div>
+
+									</aside>
+
+									<section id="comments" class="a2commentwrap">
+									   <div>
+    									   <a name="comments"></a>
+
+	 <section class="d2incommentspl">
+	 <div class="commentwrap" id="commentwrap">
+
+
+			 <div class="commentBox">
+				<div class="title hide">
+					<h4>
+						<span class="escape-link"><a href="//slashdot.org/story/13/12/31/1437227/how-machine-learning-can-transform-online-dating" title="Back to Article - How Machine Learning Can Transform Online Dating">How Machine Learning Can Transform Online Dating</a></span>
+						<span class="commentBoxLinks"><a href="#" onclick="D2.ajaxFetchComments(0,1); return false"><span id="more_comments_num_d"></span> More</a>
+
+
+
+	| <span class="ind"></span><a href="//slashdot.org/comments.pl?sid=4615283&amp;op=reply&amp;threshold=1&amp;commentsort=0&amp;mode=thread&amp;pid=" onclick="D2.replyTo(0); return false;">Reply</a>
+
+
+	<a class="login"  href="//slashdot.org/login.pl" onclick="show_login_box(); return false">Login</a></span>
+					</h4>
+				</div>
+			 </div>
+
+
+
+
+
+
+<section class="grid_24" id="d2header"><div>
+
+	<h2 class="commentspl test"><a title="Back to Article - How Machine Learning Can Transform Online Dating" href="//slashdot.org/story/13/12/31/1437227/how-machine-learning-can-transform-online-dating">How Machine Learning Can Transform Online Dating</a></h2>
+
+	<nav class="grid_24">
+		<div class="grid_14 widthauto">
+
+				   <span class="ind"></span><a class="btn first" href="//slashdot.org/comments.pl?sid=4615283&amp;op=reply&amp;threshold=1&amp;commentsort=0&amp;mode=thread&amp;pid=" onclick="D2.replyTo(0); return false;">Post</a>
+
+			<!-- <a href="//slashdot.org/search.pl?op=comments&amp;sid=4615283" class="btn">Search <span class="totalcommentcnt">86</span> Comments</a> -->
+
+
+   					<a href="#" onclick="D2.ajaxFetchComments(0,1,'','',-1); return false" class="btn" id="d2loadall">Load All Comments</a>
+
+
+
+		</div>
+		<div class="grid_10 d1or2">
+
+
+
+					 <div id="d2out" class="horizontal rooted grid_15">
+								 <div id="d2act" class="hide">
+									 <div class="loki" id="gods">
+										 <script type="text/javascript">
+										 $(function(){
+											 D2.slider = new D2.Slider(
+												 D2.user_threshold(),
+												 D2.user_highlightthresh(),
+												 'x'
+											 );
+										 });
+										 </script>
+										 <div id="bones" class="grid_12">
+											 <div class="ccw-count-container grid_24">
+												 <span id="ccw-full-count-text" class="grid_8 ccw-count-text tcenter"><span></span><span id="ccw-full-phrase">&nbsp;Full</span></span>
+												 <span id="ccw-abbr-count-text" class="grid_8 ccw-count-text"><span></span><span id="ccw-abbr-phrase">&nbsp;Abbreviated</span></span>
+												 <span id="ccw-hide-count-text" class="grid_8 ccw-count-text tleft"><span></span><span id="ccw-hide-phrase">&nbsp;Hidden</span></span>
+											 </div>
+											 <div id="ccw">
+												 <div id="ccw-body" class="ccw-core">
+													 <div id="ccw-panel-container" class="ccw-core">
+														 <div id="ccw-full-panel" class="ccw-panel">
+															 /Sea<div class="ccw-panel-border"></div>
+															 <div id="ccw-full-count-pos" class="ccw-core-pos ccw-count-pos"></div>
+														 </div>
+														 <div id="ccw-abbr-panel" class="ccw-panel">
+															 <div class="ccw-panel-border"></div>
+															 <div id="ccw-abbr-count-pos" class="ccw-core-pos ccw-count-pos"></div>
+														 </div>
+														 <div id="ccw-hide-panel" class="ccw-panel">
+															 <div id="ccw-hide-count-pos" class="ccw-core-pos ccw-count-pos"></div>
+														 </div>
+													 </div>
+													 <div id="ccw-control" class="ccw-core">
+														 <div id="ccw-centering-rail" class="ccw-core">
+															 <div id="ccw-hide-bar-pos" class="ccw-core-pos">
+																 <div id="ccw-hide-bar" class="ccw-bar">
+																	 <div id="ccw-hide-bar-tab" class="ccw-bar-tab"></div>
+																	 <div class="ccwa"></div>
+																	 <div class="ccwb"></div>
+																	 <div id="ccw-hide-bar-upzone" class="ccw-upzone" onclick="D2.slider.stepTHT(HIDE_BAR, +1)"></div>
+																	 <div id="ccw-hide-bar-downzone" class="ccw-downzone" onclick="D2.slider.stepTHT(HIDE_BAR, -1)"></div>
+																 </div>
+															 </div>
+															 <div id="ccw-abbr-bar-pos" class="ccw-core-pos">
+																 <div id="ccw-abbr-bar" class="ccw-bar">
+																	 <div id="ccw-abbr-bar-tab" class="ccw-bar-tab"></div>
+																	 <div class="ccwa"></div>
+																	 <div class="ccwb"></div>
+																	 <div id="ccw-abbr-bar-upzone" class="ccw-upzone" onclick="D2.slider.stepTHT(ABBR_BAR, +1)"></div>
+																	 <div id="ccw-abbr-bar-downzone" class="ccw-downzone" onclick="D2.slider.stepTHT(ABBR_BAR, -1)"></div>
+																 </div>
+															 </div>
+														 </div>
+													 </div>
+												 </div>
+												 <div class="ccw-score-label grid_24">
+													 <div class="grid_3"><span class="sc">Score:</span></div>
+													 <div class="grid_3">5<span class="lg"></span></div>
+													 <div class="grid_3">4<span class="lg"></span></div>
+													 <div class="grid_3">3<span class="lg"></span></div>
+													 <div class="grid_3">2<span class="lg"></span></div>
+													 <div class="grid_3">1<span class="lg"></span></div>
+													 <div class="grid_3">0<span class="lg"></span></div>
+													 <div class="grid_3">-1<span class="lg"></span></div>
+												 </div>
+											 </div>
+										 </div>
+										 <div class="commentControlFooter"><a href="#" onclick="D2.ajaxFetchComments(0,1); return false"><span id="more_comments_num_c"></span> More</a>
+
+
+
+	| <span class="ind"></span><a href="//slashdot.org/comments.pl?sid=4615283&amp;op=reply&amp;threshold=1&amp;commentsort=0&amp;mode=thread&amp;pid=" onclick="D2.replyTo(0); return false;">Reply</a>
+
+
+	<a class="login"  href="//slashdot.org/login.pl" onclick="show_login_box(); return false">Login</a><div id="login_cover" class="hide" onclick="hide_login_box()"></div>
+<div id="login_box" class="hide">
+	<div id="login_box_content">
+		<div id='embbeded_login_modal' class="hide">
+<form action="https://slashdot.org/my/login" method="post" onsubmit="if (global_returnto) { this.returnto.value = global_returnto }" class="embedded"><fieldset style="-webkit-border-radius:10px 10px 0 0;border-radius:10px 10px 0 0;-moz-border-radius:10px 10px 0 0">
+<div style='height:25px;'>&nbsp;</div>
+    <input type="hidden" name="returnto" value="//slashdot.org/comments.pl?sid=4615283">
+    <input type="hidden" name="op" value="userlogin">
+    <p>
+        <label class="fleft" for="unickname">Nickname:</label>
+        <input type="text" name="unickname" value="">
+    </p>
+    <p>
+        <label class="fleft" for="upasswd">Password:</label>
+        <input type="password" name="upasswd" placeholder="6-20 characters long">
+    </p>
+    <label class="checkbox"><input type="checkbox" name="login_temp" value="yes"> Public Terminal</label>
+    <br>
+    <hr>
+    <input type="submit" name="userlogin" value="Log In" class="fno"> <a href="//slashdot.org/my/mailpassword" class="btn link" onclick="getModalPrefs('sendPasswdModal', 'Retrieve Password', 1); return false;">Forgot your password?</a>
+</fieldset></form>
+
+                <form action="//slashdot.org/login.pl" method="post"><fieldset style="-webkit-border-radius:0 0 10px 10px;border-radius:0 0 10px 10px;-moz-border-radius:0 0 10px 10px">
+                <input type="hidden" name="op" value="claim_openid">
+                <input type="hidden" name="openid_login" value="1">
+                <label for="openid_url" class="openid_url">
+                <input type="text" name="openid_url" value="http://" size="32" maxlength="255">
+                </label><br>
+                <input type="submit" value="Log in with OpenID" class="button fno" style="width:230px;">
+                </fieldset></form>
+                <div id="janrainEngageEmbed"></div>
+
+
+<div class="actions">
+ <a class="ico close" onclick="hide_login_slider();" href=""><span>Close</span></a>
+</div>
+</div>
+		<div class="actions">
+			<a class="ico close" href="#" onclick="hide_login_box(); return false"><span>Close</span></a>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">logged_in = 0</script></div>
+										 <div id="commentControlBoxStatus" class="hide"></div>
+									 </div>
+								 </div>
+					 </div>
+
+
+
+
+
+				  <a href="//slashdot.org/search.pl?op=comments&amp;sid=4615283" class="ui-icon search_comments">Search <span class="totalcommentcnt">86</span> Comments</a>
+
+
+
+
+				  <a class="pref ui-icon-w" href="//slashdot.org/users.pl" onclick="show_login_box(); $('#modal_box').addClass('login'); return false;">Log In/Create an Account</a>
+
+		</div>
+	</nav>
+	<section id="besttabs" class="grid_24">
+	    <span class="legend">Comments Filter:</span>
+	    <ul class="besttabslist">
+	        <li class="active"><a href="//slashdot.org/story/13/12/31/1437227/how-machine-learning-can-transform-online-dating#comments">All</a></li>
+
+	        <li ><a href="//slashdot.org/story/13/12/31/1437227/how-machine-learning-can-transform-online-dating/insightful-comments#comments">Insightful</a></li>
+
+	        <li ><a href="//slashdot.org/story/13/12/31/1437227/how-machine-learning-can-transform-online-dating/informative-comments#comments">Informative</a></li>
+
+	        <li ><a href="//slashdot.org/story/13/12/31/1437227/how-machine-learning-can-transform-online-dating/interesting-comments#comments">Interesting</a></li>
+
+	        <li ><a href="//slashdot.org/story/13/12/31/1437227/how-machine-learning-can-transform-online-dating/funny-comments#comments">Funny</a></li>
+
+	    </ul>
+	</section>
+    <aside class="grid_24">
+		<p>
+			<small><strong>The Fine Print:</strong> The following comments are owned by whoever posted them.  We are not responsible for them in any way.</small>
+		</p>
+		<a name="topcomment"></a>
+    </aside>
+
+
+</div></section><script src="//a.fsdn.com/sd/comments-minified.js?alpha_20131220" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+<!--
+D2.d2_keybindings_disable()[191] = 1;
+D2.boxStatus(1);
+D2.comments({ 45829659: { uid: 12314, pid: 45828659, read: 0, points: 2, kids: [  ], opid: 45828659 }, 45829731: { uid: 686923, pid: 0, read: 0, points: 2, kids: [  ], opid: 0 }, 45829653: { uid: 216268, pid: 45828839, subject: "Re:Dating Sites", read: 0, points: 2, kids: [ 45829809 ], opid: 45828839 }, 45828857: { uid: 666, pid: 45828645, read: 0, points: 0, kids: [  ], opid: 45828645 }, 45829579: { uid: 666, pid: 45829415, subject: "Re:GIGO", read: 0, points: 0, kids: [  ], opid: 45829415 }, 45828899: { uid: 1973486, pid: 45828601, subject: "Re:Not the algorithm we need", read: 0, points: 1, kids: [  ], opid: 45828601 }, 45828767: { uid: 666, pid: 0, read: 0, points: 0, kids: [  ], opid: 0 }, 45829271: { uid: 666, pid: 0, read: 0, points: 0, kids: [  ], opid: 0 }, 45828867: { uid: 765387, pid: 45828601, subject: "Re:Not the algorithm we need", read: 0, points: 1, kids: [ 45830177 ], opid: 45828601 }, 45828713: { uid: 242117, pid: 0, read: 0, points: 5, kids: [ 45828955, 45829077, 45829907, 45830113 ], opid: 0 }, 45829393: { uid: 173459, pid: 45828705, subject: "Re:Not the algorithm we need", read: 0, points: 2, kids: [  ], opid: 45828705 }, 45828627: { uid: 666, pid: 0, read: 0, points: 1, kids: [  ], opid: 0 }, 45829907: { uid: 3480731, pid: 45828713, subject: "Re:I prefer this formula; it's more honest", read: 0, points: 1, kids: [  ], opid: 45828713 }, 45829401: { uid: 671371, pid: 45828779, subject: "Re:Not the algorithm we need", read: 0, points: 2, kids: [  ], opid: 45828779 }, 45828697: { uid: 666, pid: 0, read: 0, points: 0, kids: [  ], opid: 0 }, 45829503: { uid: 666, pid: 45828805, subject: "Re:Dating Algorithm Corollary", read: 0, points: 1, kids: [  ], opid: 45828805 }, 45828849: { uid: 2590497, pid: 45828601, subject: "Re:Not the algorithm we need", read: 0, points: 3, kids: [  ], opid: 45828601 }, 45829809: { uid: 80510, pid: 45829653, subject: "Re:Dating Sites", read: 0, points: 2, kids: [  ], opid: 45829653 }, 45828937: { uid: 666, pid: 45828601, subject: "Re:Not the algorithm we need", read: 0, points: 0, kids: [  ], opid: 45828601 }, 45828773: { uid: 664417, pid: 0, read: 0, points: 2, kids: [  ], opid: 0 }, 45829077: { uid: 666, pid: 45828713, subject: "Re:I prefer this formula; it's more honest", read: 0, points: 0, kids: [  ], opid: 45828713 }, 45830155: { uid: 2160038, pid: 45828779, subject: "Re:Not the algorithm we need", read: 0, points: 2, kids: [  ], opid: 45828779 }, 45829637: { uid: 88907, pid: 45829175, subject: "Re:Not the algorithm we need", read: 0, points: 2, kids: [  ], opid: 45829175 }, 45828721: { uid: 666, pid: 45828601, subject: "Re:Not the algorithm we need", read: 0, points: 0, kids: [  ], opid: 45828601 }, 45828705: { uid: 321705, pid: 45828601, subject: "Re:Not the algorithm we need", read: 0, points: 5, kids: [ 45828779, 45828977, 45829393, 45829565, 45830047 ], opid: 45828601 }, 45828805: { uid: 664417, pid: 45828659, subject: "Re:Dating Algorithm Corollary", read: 0, points: 4, kids: [ 45828951, 45829503 ], opid: 45828659 }, 45828793: { uid: 666, pid: 0, read: 0, points: 0, kids: [ 45829559 ], opid: 0 }, 45829591: { uid: 666, pid: 45828889, subject: "Re:Solving the wrong problem", read: 0, points: 0, kids: [  ], opid: 45828889 }, 45829375: { uid: 94389, pid: 0, read: 0, points: 2, kids: [  ], opid: 0 }, 45829193: { uid: 722110, pid: 0, read: 0, points: 2, kids: [  ], opid: 0 }, 45829995: { uid: 3480047, pid: 45828839, subject: "Re:Dating Sites", read: 0, points: 1, kids: [  ], opid: 45828839 }, 45828581: { uid: 666, pid: 0, read: 0, points: 0, kids: [ 45828645 ], opid: 0 }, 45829235: { uid: 666, pid: 45828601, subject: "Re:Not the algorithm we need", read: 0, points: 0, kids: [ 45829975 ], opid: 45828601 }, 45828795: { uid: 666, pid: 0, read: 0, points: 0, kids: [  ], opid: 0 }, 45828619: { uid: 666, pid: 0, read: 0, points: 2, kids: [  ], opid: 0 }, 45828977: { uid: 88907, pid: 45828705, subject: "Re:Not the algorithm we need", read: 0, points: 2, kids: [ 45829175, 45829355 ], opid: 45828705 }, 45828779: { uid: 595695, pid: 45828705, subject: "Re:Not the algorithm we need", read: 0, points: 5, kids: [ 45829401, 45830151, 45830155 ], opid: 45828705 }, 45829101: { uid: 148874, pid: 45828601, subject: "Re:Not the algorithm we need", read: 0, points: 2, kids: [  ], opid: 45828601 }, 45830113: { uid: 666, pid: 45828713, subject: "Re:I prefer this formula; it's more honest", read: 0, points: 0, kids: [  ], opid: 45828713 }, 45828889: { uid: 666, pid: 0, read: 0, points: 0, kids: [ 45829591 ], opid: 0 }, 45828839: { uid: 65939, pid: 0, read: 0, points: 3, kids: [ 45829143, 45829653, 45829945, 45829957, 45829995 ], opid: 0 }, 45830047: { uid: 666, pid: 45828705, subject: "Re:Not the algorithm we need", read: 0, points: 0, kids: [  ], opid: 45828705 }, 45828699: { uid: 911942, pid: 45828659, subject: "Re:Dating Algorithm Corollary", read: 0, points: 2, kids: [  ], opid: 45828659 }, 45829155: { uid: 664417, pid: 45828951, subject: "Re:Dating Algorithm Corollary", read: 0, points: 3, kids: [  ], opid: 45828951 }, 45828659: { uid: 1955220, pid: 0, read: 0, points: 1, kids: [ 45828699, 45828805, 45829659 ], opid: 0 }, 45829285: { uid: 666, pid: 45828955, subject: "Re:I prefer this formula; it's more honest", read: 0, points: 0, kids: [  ], opid: 45828955 }, 45829415: { uid: 216268, pid: 45828815, subject: "Re:GIGO", read: 0, points: 2, kids: [ 45829579, 45829619, 45830241 ], opid: 45828815 }, 45828955: { uid: 666, pid: 45828713, subject: "Re:I prefer this formula; it's more honest", read: 0, points: 1, kids: [ 45829285 ], opid: 45828713 }, 45830241: { uid: 826473, pid: 45829415, subject: "Re:GIGO", read: 0, points: 2, kids: [  ], opid: 45829415 }, 45828813: { uid: 666, pid: 45828601, subject: "Re:Not the algorithm we need", read: 0, points: 0, kids: [  ], opid: 45828601 }, 45829019: { uid: 666, pid: 45828601, read: 0, points: 0, kids: [  ], opid: 45828601 }, 45828935: { uid: 740220, pid: 45828815, subject: "Re:GIGO", read: 0, points: 2, kids: [  ], opid: 45828815 }, 45829443: { uid: 216268, pid: 45828951, subject: "Re:Dating Algorithm Corollary", read: 0, points: 3, kids: [  ], opid: 45828951 }, 45829559: { uid: 216268, pid: 45828793, subject: "Re:Would be nice if it works.", read: 0, points: 2, kids: [  ], opid: 45828793 }, 45829957: { uid: 85913, pid: 45828839, read: 0, points: 2, kids: [  ], opid: 45828839 }, 45830073: { uid: 2953269, pid: 45829671, subject: "Re:Not the algorithm we need", read: 0, points: 1, kids: [  ], opid: 45829671 }, 45829175: { uid: 321705, pid: 45828977, subject: "Re:Not the algorithm we need", read: 0, points: 2, kids: [ 45829637 ], opid: 45828977 }, 45829947: { uid: 173459, pid: 45829565, subject: "Re:Not the algorithm we need", read: 0, points: 2, kids: [  ], opid: 45829565 }, 45830177: { uid: 666, pid: 45828867, subject: "Re:Not the algorithm we need", read: 0, points: 0, kids: [  ], opid: 45828867 }, 45830031: { uid: 666, pid: 0, read: 0, points: 0, kids: [  ], opid: 0 }, 45829945: { uid: 216268, pid: 45828839, subject: "Re:Dating Sites", read: 0, points: 2, kids: [  ], opid: 45828839 }, 45829565: { uid: 317691, pid: 45828705, subject: "Re:Not the algorithm we need", read: 0, points: 2, kids: [ 45829947 ], opid: 45828705 }, 45829619: { uid: 317691, pid: 45829415, subject: "Re:GIGO", read: 0, points: 2, kids: [  ], opid: 45829415 }, 45829001: { uid: 666, pid: 0, read: 0, points: 0, kids: [  ], opid: 0 }, 45828951: { uid: 1973486, pid: 45828805, subject: "Re:Dating Algorithm Corollary", read: 0, points: 1, kids: [ 45829155, 45829443 ], opid: 45828805 }, 45829671: { uid: 88907, pid: 45829355, subject: "Re:Not the algorithm we need", read: 0, points: 2, kids: [ 45830073 ], opid: 45829355 }, 45828661: { uid: 1207234, pid: 0, read: 0, points: 1, kids: [  ], opid: 0 }, 45829629: { uid: 736903, pid: 0, read: 0, points: 2, kids: [  ], opid: 0 }, 45828963: { uid: 666, pid: 0, read: 0, points: 0, kids: [  ], opid: 0 }, 45828815: { uid: 911942, pid: 45828643, subject: "Re:GIGO", read: 0, points: 2, kids: [ 45828935, 45829415 ], opid: 45828643 }, 45830151: { uid: 826473, pid: 45828779, subject: "Re:Not the algorithm we need", read: 0, points: 2, kids: [  ], opid: 45828779 }, 45828689: { uid: 666, pid: 0, read: 0, points: 0, kids: [  ], opid: 0 }, 45829469: { uid: 666, pid: 45829387, read: 0, points: 0, kids: [  ], opid: 45829387 }, 45828701: { uid: 666, pid: 45828601, read: 0, points: 0, kids: [  ], opid: 45828601 }, 45828645: { uid: 666, pid: 45828581, read: 0, points: 0, kids: [ 45828857 ], opid: 45828581 }, 45828643: { uid: 911942, pid: 0, read: 0, points: 1, kids: [ 45828815 ], opid: 0 }, 45828653: { uid: 3343045, pid: 45828601, subject: "Re:Not the algorithm we need", read: 0, points: 4, kids: [  ], opid: 45828601 }, 45828601: { uid: 537200, pid: 0, read: 0, points: 5, kids: [ 45828653, 45828701, 45828705, 45828721, 45828813, 45828849, 45828867, 45828899, 45828937, 45829019, 45829101, 45829151, 45829235, 45829289 ], opid: 0 }, 45829151: { uid: 637240, pid: 45828601, subject: "Re:Not the algorithm we need", read: 0, points: 2, kids: [  ], opid: 45828601 }, 45829355: { uid: 216268, pid: 45828977, subject: "Re:Not the algorithm we need", read: 0, points: 3, kids: [ 45829671 ], opid: 45828977 }, 45829737: { uid: 666, pid: 0, read: 0, points: 0, kids: [  ], opid: 0 }, 45828883: { uid: 666, pid: 0, read: 0, points: 0, kids: [  ], opid: 0 }, 45829387: { uid: 666, pid: 0, read: 0, points: 0, kids: [ 45829469 ], opid: 0 }, 45829143: { uid: 3418089, pid: 45828839, subject: "Re:Dating Sites", read: 0, points: 2, kids: [  ], opid: 45828839 }, 45829975: { uid: 2241656, pid: 45829235, subject: "Re:Not the algorithm we need", read: 0, points: 2, kids: [  ], opid: 45829235 }, 45829289: { uid: 216268, pid: 45828601, subject: "Re:Not the algorithm we need", read: 0, points: 3, kids: [  ], opid: 45828601 } });
+
+D2.thresh_totals({6:{6:{1:86,3:0,2:0}},4:{6:{1:80,3:2,2:4},4:{1:80,3:6,2:0},5:{1:80,3:4,2:2}},1:{6:{1:30,3:2,2:54},4:{1:30,3:7,2:49},1:{1:30,3:56,2:0},3:{1:30,3:18,2:38},2:{1:30,3:48,2:8},5:{1:30,3:4,2:52}},3:{6:{1:74,3:2,2:10},4:{1:74,3:7,2:5},3:{1:74,3:12,2:0},5:{1:74,3:4,2:8}},0:{6:{1:0,3:2,2:84},4:{1:0,3:7,2:79},1:{1:0,3:70,2:16},3:{1:0,3:18,2:68},0:{1:0,3:86,2:0},2:{1:0,3:48,2:38},5:{1:0,3:4,2:82}},2:{6:{1:42,3:2,2:42},4:{1:42,3:7,2:37},3:{1:42,3:18,2:26},2:{1:42,3:44,2:0},5:{1:42,3:4,2:40}},5:{6:{1:82,3:2,2:2},5:{1:82,3:4,2:0}},"-1":{6:{1:0,3:2,2:84},4:{1:0,3:7,2:79},1:{1:0,3:70,2:16},3:{1:0,3:18,2:68},0:{1:0,3:86,2:0},2:{1:0,3:48,2:38},5:{1:0,3:4,2:82},"-1":{1:0,3:86,2:0}}});
+
+D2.root_comment(0);
+D2.root_comments([45828581,45828601,45828619,45828627,45828643,45828659,45828661,45828689,45828697,45828713,45828767,45828773,45828793,45828795,45828839,45828883,45828889,45828963,45829001,45829193,45829271,45829375,45829387,45829629,45829731,45829737,45830031]);
+D2.root_comments_hash({45828659:1,45829731:1,45828767:1,45829271:1,45828713:1,45828627:1,45828697:1,45830031:1,45829001:1,45828661:1,45829629:1,45828773:1,45828963:1,45828793:1,45828689:1,45829375:1,45829193:1,45828643:1,45828601:1,45828581:1,45828795:1,45828619:1,45829737:1,45828883:1,45829387:1,45828889:1,45828839:1});
+
+D2.d2_comment_order(0);
+D2.user_uid(666);
+D2.user_is_anon(1);
+D2.user_is_admin(0);
+D2.user_is_subscriber(0);
+D2.user_smallscreen(0);
+D2.user_threshold(1);
+D2.user_highlightthresh(4);
+D2.user_d2asp(0);
+
+D2.discussion_id(4615283);
+
+D2.d2_seen('45828581,20,18,8,16,2,8,6,2,28,8,2,2,4,8,8,46,6,6,14,2,10,8,2,24,10,8,10,16,6,10,36,2,14,4,8,14,24,18,58,24,42,8,4,20,18,42,36,14,4,66,20,12,6,8,14,28,26,34,56,6,14,12,28,10,8,16,6,12,60,6,72,98,38,2,10,18,20,36,16,26,40,38,4,22,64');
+D2.more_comments_num(0);
+
+
+//-->
+</script>
+
+
+
+
+
+
+
+
+		<ul id="commentlisting" class="d2">
+			<li id="tree_45828581" class="comment hidden"><span class="ind"></span>
+<div id="comment_status_45828581" class="commentstatus"></div>
+<div id="comment_45828581" class="cw">
+</div>
+
+<div id="replyto_45828581"></div>
+
+<ul id="group_45828581">
+	<li id="hiddens_45828581" class="hide"></li>
+</ul>
+
+<ul id="commtree_45828581"><li id="tree_45828645" class="comment hidden"><span class="ind"></span>
+<div id="comment_status_45828645" class="commentstatus"></div>
+<div id="comment_45828645" class="cw">
+</div>
+
+<div id="replyto_45828645"></div>
+
+<ul id="group_45828645">
+	<li id="hiddens_45828645" class="hide"></li>
+</ul>
+
+<ul id="commtree_45828645"><li id="tree_45828857" class="comment hidden"><span class="ind"></span>
+<div id="comment_status_45828857" class="commentstatus"></div>
+<div id="comment_45828857" class="cw">
+</div>
+
+<div id="replyto_45828857"></div>
+
+<ul id="group_45828857">
+	<li id="hiddens_45828857" class="hide"></li>
+</ul>
+
+</li><li id="hidestring_45828645"><noscript><b class='more'><span class="ind"></span><a href="//slashdot.org/comments.pl?sid=4615283&amp;threshold=-1&amp;commentsort=0&amp;mode=thread&amp;pid=45828645">1 reply</a> beneath your current threshold.</b></noscript></li></ul></li><li id="hidestring_45828581"><noscript><b class='more'><span class="ind"></span><a href="//slashdot.org/comments.pl?sid=4615283&amp;threshold=-1&amp;commentsort=0&amp;mode=thread&amp;pid=45828581">1 reply</a> beneath your current threshold.</b></noscript></li></ul></li><li id="tree_45828601" class="comment full contain"><span class="ind"></span>
+<div id="comment_status_45828601" class="commentstatus"></div>
+<div id="comment_45828601" class="cw">
+	<div id="comment_top_45828601" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_45828601" name="comment_link_45828601" href="//slashdot.org/comments.pl?sid=4615283&amp;cid=45828601" onclick="return D2.setFocusComment(45828601)" >Not the algorithm we need</a>
+
+
+		 	<span id="comment_score_45828601" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 45828601); return false"><span class=opt>Score:</span>5</a>, Insightful)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~russotto">russotto</a>  <span class="uid"><a href="//slashdot.org/~russotto">(537200)</a></span></a></span><span class="writes" style="display:none"> writes:</span>
+			<span class="otherdetails" id="comment_otherdetails_45828601">
+		on Tuesday December 31, 2013 @09:50AM (<span class="ind"></span><a href="//slashdot.org/comments.pl?sid=4615283&amp;cid=45828601">#45828601</a>)
+		<small><a href="//slashdot.org/~russotto/journal/" title="Wednesday October 08, 2008 @11:27AM" class="user_journal_display">Journal</a> </small>
+</span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_45828601"><p>All the algorithms in the world aren't going to help when the intersection of "people you'd care to date" and "people who'd care to date you" is empty.  What we need is an algorithm to convince people to lower their expectations when they're unattractive, boring, unmannerly, old, poor and/or cheap, have baggage, etc.</p></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_45828601">
+<span class="ind"></span><a id="reply_link_45828601" class="btn link" href="//slashdot.org/comments.pl?sid=4615283&amp;op=Reply&amp;threshold=1&amp;commentsort=0&amp;mode=thread&amp;pid=45828601" onclick="D2.replyTo(45828601); return false;">Reply to This</a> 	<a href="#" class="comment_share_toggle btn link">Share</a>
+	<div class="comment_share sharethis-0 hide"><span class="au"></span>
+		<a class="janrain t" href="#" data-provider="twitter" data-message="Not the algorithm we need by russotto @slashdot" data-url="http://slashdot.org/comments.pl?sid=4615283&cid=45828601" data-title="Not the algorithm we need">twitter</a>
+		<a class="janrain f" href="#" data-provider="facebook" data-message="Not the algorithm we need by russotto" data-url="http://slashdot.org/comments.pl?sid=4615283&cid=45828601" data-title="Not the algorithm we need">facebook</a>
+		<a class="janrain l" href="#" data-provider="linkedin" data-message="Not the algorithm we need by russotto" data-url="http://slashdot.org/comments.pl?sid=4615283&cid=45828601" data-title="Not the algorithm we need">linkedin</a>
+		<a class="g" href="http://plus.google.com/share?url=http://slashdot.org/comments.pl?sid=4615283%26cid=45828601" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><img src="//www.gstatic.com/images/icons/gplus-16.png" alt="Share on Google+"/></a>
+	</div>
+ <span class="ind"></span><a id="reply_link_45828601" title="Flag this comment as Inappropriate" class="ui-icon flag fright" href="//slashdot.org/comments.pl?sid=4615283&amp;op=flag&amp;threshold=1&amp;commentsort=0&amp;mode=thread&amp;pid=45828601" onclick="return false;">Flag as Inappropriate</a>
+</div>
+</div>
+
+<div id="replyto_45828601"></div>
+
+<ul id="group_45828601">
+	<li id="hiddens_45828601" class="hide"></li>
+</ul>
+
+<ul id="commtree_45828601"><li id="tree_45828653" class="comment full contain"><span class="ind"></span>
+<div id="comment_status_45828653" class="commentstatus"></div>
+<div id="comment_45828653" class="cw">
+	<div id="comment_top_45828653" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_45828653" name="comment_link_45828653" href="//slashdot.org/comments.pl?sid=4615283&amp;cid=45828653" onclick="return D2.setFocusComment(45828653)" >Re:Not the algorithm we need</a>
+
+
+		 	<span id="comment_score_45828653" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 45828653); return false"><span class=opt>Score:</span>4</a>, Funny)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~TheloniousToady">TheloniousToady</a>  <span class="uid"><a href="//slashdot.org/~TheloniousToady">(3343045)</a></span></a></span><span class="writes" style="display:none"> writes:</span>
+			<span class="otherdetails" id="comment_otherdetails_45828653">
+		on Tuesday December 31, 2013 @09:55AM (<span class="ind"></span><a href="//slashdot.org/comments.pl?sid=4615283&amp;cid=45828653">#45828653</a>)
+		<small> </small>
+</span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_45828653"><p><div class="quote"><p>What we need is an algorithm to convince people to lower their expectations when they're unattractive, boring, unmannerly, old, poor and/or cheap, have baggage, etc.</p></div><p>Don't they already have that algorithm up and working here at Slashdot?</p></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_45828653">
+<span class="ind"></span><a id="reply_link_45828653" class="btn link" href="//slashdot.org/comments.pl?sid=4615283&amp;op=Reply&amp;threshold=1&amp;commentsort=0&amp;mode=thread&amp;pid=45828653" onclick="D2.replyTo(45828653); return false;">Reply to This</a> <span class="ind"></span><a class="btn link" href="//slashdot.org/comments.pl?sid=4615283&amp;threshold=1&amp;commentsort=0&amp;mode=thread&amp;cid=45828601" onclick="return D2.selectParent(45828601)">Parent</a> 	<a href="#" class="comment_share_toggle btn link">Share</a>
+	<div class="comment_share sharethis-0 hide"><span class="au"></span>
+		<a class="janrain t" href="#" data-provider="twitter" data-message="Re:Not the algorithm we need by TheloniousToady @slashdot" data-url="http://slashdot.org/comments.pl?sid=4615283&cid=45828653" data-title="Re:Not the algorithm we need">twitter</a>
+		<a class="janrain f" href="#" data-provider="facebook" data-message="Re:Not the algorithm we need by TheloniousToady" data-url="http://slashdot.org/comments.pl?sid=4615283&cid=45828653" data-title="Re:Not the algorithm we need">facebook</a>
+		<a class="janrain l" href="#" data-provider="linkedin" data-message="Re:Not the algorithm we need by TheloniousToady" data-url="http://slashdot.org/comments.pl?sid=4615283&cid=45828653" data-title="Re:Not the algorithm we need">linkedin</a>
+		<a class="g" href="http://plus.google.com/share?url=http://slashdot.org/comments.pl?sid=4615283%26cid=45828653" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><img src="//www.gstatic.com/images/icons/gplus-16.png" alt="Share on Google+"/></a>
+	</div>
+ <span class="ind"></span><a id="reply_link_45828653" title="Flag this comment as Inappropriate" class="ui-icon flag fright" href="//slashdot.org/comments.pl?sid=4615283&amp;op=flag&amp;threshold=1&amp;commentsort=0&amp;mode=thread&amp;pid=45828653" onclick="return false;">Flag as Inappropriate</a>
+</div>
+</div>
+
+<div id="replyto_45828653"></div>
+
+<ul id="group_45828653">
+	<li id="hiddens_45828653" class="hide"></li>
+</ul>
+
+</li><li id="tree_45828701" class="comment hidden"><span class="ind"></span>
+<div id="comment_status_45828701" class="commentstatus"></div>
+<div id="comment_45828701" class="cw">
+</div>
+
+<div id="replyto_45828701"></div>
+
+<ul id="group_45828701">
+	<li id="hiddens_45828701" class="hide"></li>
+</ul>
+
+</li><li id="tree_45828705" class="comment full contain"><span class="ind"></span>
+<div id="comment_status_45828705" class="commentstatus"></div>
+<div id="comment_45828705" class="cw">
+	<div id="comment_top_45828705" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_45828705" name="comment_link_45828705" href="//slashdot.org/comments.pl?sid=4615283&amp;cid=45828705" onclick="return D2.setFocusComment(45828705)" >Re:Not the algorithm we need</a>
+
+
+		 	<span id="comment_score_45828705" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 45828705); return false"><span class=opt>Score:</span>5</a>, Insightful)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~gstoddart">gstoddart</a>  <span class="uid"><a href="//slashdot.org/~gstoddart">(321705)</a></span></a></span><span class="writes" style="display:none"> writes:</span>
+			<span class="otherdetails" id="comment_otherdetails_45828705">
+		on Tuesday December 31, 2013 @10:00AM (<span class="ind"></span><a href="//slashdot.org/comments.pl?sid=4615283&amp;cid=45828705">#45828705</a>)
+		<small><a href="http://slashdot.org/" title="http://slashdot.org/" class="user_homepage_display">Homepage</a> </small>
+</span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_45828705"><p>No kidding.  I've known a few people who aren't exactly the best catches who refuse to date anybody who looks anything less than a supermodel.</p><p>If you're 80 pounds overweight, or a raging nerd, or whatever, and you refuse to date someone who isn't perfect<nobr> <wbr></nobr>... you're going to be single and lonely for a long time.</p><p>I've known way too many people with their own defects (and who among us doesn't have them, especially here) who looked at potential partners and turned up their nose for stupid reasons -- a little overweight, wears glasses, curly hair.</p><p>Not saying you need to date the ugliest person you can find, but having a realistic expectation of what you might actually get goes a long way.</p><p>Don't be the Comic Book Guy saying "Oh, I've wasted my life" and passing up opportunities.  If you're a 5, don't shoot for a 10.</p></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_45828705">
+<span class="ind"></span><a id="reply_link_45828705" class="btn link" href="//slashdot.org/comments.pl?sid=4615283&amp;op=Reply&amp;threshold=1&amp;commentsort=0&amp;mode=thread&amp;pid=45828705" onclick="D2.replyTo(45828705); return false;">Reply to This</a> <span class="ind"></span><a class="btn link" href="//slashdot.org/comments.pl?sid=4615283&amp;threshold=1&amp;commentsort=0&amp;mode=thread&amp;cid=45828601" onclick="return D2.selectParent(45828601)">Parent</a> 	<a href="#" class="comment_share_toggle btn link">Share</a>
+	<div class="comment_share sharethis-0 hide"><span class="au"></span>
+		<a class="janrain t" href="#" data-provider="twitter" data-message="Re:Not the algorithm we need by gstoddart @slashdot" data-url="http://slashdot.org/comments.pl?sid=4615283&cid=45828705" data-title="Re:Not the algorithm we need">twitter</a>
+		<a class="janrain f" href="#" data-provider="facebook" data-message="Re:Not the algorithm we need by gstoddart" data-url="http://slashdot.org/comments.pl?sid=4615283&cid=45828705" data-title="Re:Not the algorithm we need">facebook</a>
+		<a class="janrain l" href="#" data-provider="linkedin" data-message="Re:Not the algorithm we need by gstoddart" data-url="http://slashdot.org/comments.pl?sid=4615283&cid=45828705" data-title="Re:Not the algorithm we need">linkedin</a>
+		<a class="g" href="http://plus.google.com/share?url=http://slashdot.org/comments.pl?sid=4615283%26cid=45828705" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><img src="//www.gstatic.com/images/icons/gplus-16.png" alt="Share on Google+"/></a>
+	</div>
+ <span class="ind"></span><a id="reply_link_45828705" title="Flag this comment as Inappropriate" class="ui-icon flag fright" href="//slashdot.org/comments.pl?sid=4615283&amp;op=flag&amp;threshold=1&amp;commentsort=0&amp;mode=thread&amp;pid=45828705" onclick="return false;">Flag as Inappropriate</a>
+</div>
+</div>
+
+<div id="replyto_45828705"></div>
+
+<ul id="group_45828705">
+	<li id="hiddens_45828705" class="hide"></li>
+</ul>
+
+<ul id="commtree_45828705"><li id="tree_45828779" class="comment full contain"><span class="ind"></span>
+<div id="comment_status_45828779" class="commentstatus"></div>
+<div id="comment_45828779" class="cw">
+	<div id="comment_top_45828779" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_45828779" name="comment_link_45828779" href="//slashdot.org/comments.pl?sid=4615283&amp;cid=45828779" onclick="return D2.setFocusComment(45828779)" >Re:Not the algorithm we need</a>
+
+
+		 	<span id="comment_score_45828779" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 45828779); return false"><span class=opt>Score:</span>5</a>, Informative)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~CastrTroy">CastrTroy</a>  <span class="uid"><a href="//slashdot.org/~CastrTroy">(595695)</a></span></a></span><span class="writes" style="display:none"> writes:</span>
+			<span class="otherdetails" id="comment_otherdetails_45828779">
+		on Tuesday December 31, 2013 @10:10AM (<span class="ind"></span><a href="//slashdot.org/comments.pl?sid=4615283&amp;cid=45828779">#45828779</a>)
+		<small><a href="http://www.kibbee.ca/" title="http://www.kibbee.ca/" class="user_homepage_display">Homepage</a> </small>
+</span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_45828779">I think the issue is that nobody is perfect.  There is no single "ideal" person, male or female.  Somebody who comes from a society with arranged marriages explained this to me, and why those relationships often end up working out better. Because both people going into it know that it is something they are going to have to work on, and that not everything about their relationship will be perfect. I'm not saying that arranged marriages are the right answer, but going into a relationship with the expectation that you'll have to work through difficulties can help a lot.  So many people give up at the first sign of a problem.  They want everything to come easy, be it with relationships, school, jobs, and any other aspect of life.</div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_45828779">
+<span class="ind"></span><a id="reply_link_45828779" class="btn link" href="//slashdot.org/comments.pl?sid=4615283&amp;op=Reply&amp;threshold=1&amp;commentsort=0&amp;mode=thread&amp;pid=45828779" onclick="D2.replyTo(45828779); return false;">Reply to This</a> <span class="ind"></span><a class="btn link" href="//slashdot.org/comments.pl?sid=4615283&amp;threshold=1&amp;commentsort=0&amp;mode=thread&amp;cid=45828705" onclick="return D2.selectParent(45828705)">Parent</a> 	<a href="#" class="comment_share_toggle btn link">Share</a>
+	<div class="comment_share sharethis-0 hide"><span class="au"></span>
+		<a class="janrain t" href="#" data-provider="twitter" data-message="Re:Not the algorithm we need by CastrTroy @slashdot" data-url="http://slashdot.org/comments.pl?sid=4615283&cid=45828779" data-title="Re:Not the algorithm we need">twitter</a>
+		<a class="janrain f" href="#" data-provider="facebook" data-message="Re:Not the algorithm we need by CastrTroy" data-url="http://slashdot.org/comments.pl?sid=4615283&cid=45828779" data-title="Re:Not the algorithm we need">facebook</a>
+		<a class="janrain l" href="#" data-provider="linkedin" data-message="Re:Not the algorithm we need by CastrTroy" data-url="http://slashdot.org/comments.pl?sid=4615283&cid=45828779" data-title="Re:Not the algorithm we need">linkedin</a>
+		<a class="g" href="http://plus.google.com/share?url=http://slashdot.org/comments.pl?sid=4615283%26cid=45828779" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><img src="//www.gstatic.com/images/icons/gplus-16.png" alt="Share on Google+"/></a>
+	</div>
+ <span class="ind"></span><a id="reply_link_45828779" title="Flag this comment as Inappropriate" class="ui-icon flag fright" href="//slashdot.org/comments.pl?sid=4615283&amp;op=flag&amp;threshold=1&amp;commentsort=0&amp;mode=thread&amp;pid=45828779" onclick="return false;">Flag as Inappropriate</a>
+</div>
+</div>
+
+<div id="replyto_45828779"></div>
+
+<ul id="group_45828779">
+	<li id="hiddens_45828779" class="hide"></li>
+</ul>
+
+<ul id="commtree_45828779"><li id="tree_45829401" class="comment oneline"><span class="ind"></span>
+<div id="comment_status_45829401" class="commentstatus"></div>
+<div id="comment_45829401" class="cw">
+	<div id="comment_top_45829401" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_45829401" name="comment_link_45829401" href="//slashdot.org/comments.pl?sid=4615283&amp;cid=45829401" onclick="return D2.setFocusComment(45829401)" >Re:</a>
+
+
+		 	<span id="comment_score_45829401" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 45829401); return false"><span class=opt>Score:</span>2</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~DigiShaman">DigiShaman</a>  <span class="uid"><a href="//slashdot.org/~DigiShaman">(671371)</a></span></a></span><span class="writes" style="display:none"> writes:</span>
+			<span class="otherdetails" id="comment_otherdetails_45829401"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_45829401"><p>Nature vs. Nurture. At the end of the day, relationships may not last because people are just <i>too</i> different. While there's adaptability, the rate in which people culturally change slows as they get older. Also, the brain is hard-wired for certain predispositions. Sometimes the natural behavior of one person will never compliment that of another. In some cases, enough cultural change will be enough to offset that persons natural behavior. It really is a balance between nature vs. nurture that determines the<span class="substr"> </span></p></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_45829401">
+
+</div>
+</div>
+
+<div id="replyto_45829401"></div>
+
+<ul id="group_45829401">
+	<li id="hiddens_45829401" class="hide"></li>
+</ul>
+
+</li><li id="tree_45830151" class="comment oneline"><span class="ind"></span>
+<div id="comment_status_45830151" class="commentstatus"></div>
+<div id="comment_45830151" class="cw">
+	<div id="comment_top_45830151" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_45830151" name="comment_link_45830151" href="//slashdot.org/comments.pl?sid=4615283&amp;cid=45830151" onclick="return D2.setFocusComment(45830151)" >Re:</a>
+
+
+		 	<span id="comment_score_45830151" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 45830151); return false"><span class=opt>Score:</span>2</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~DutchUncle">DutchUncle</a>  <span class="uid"><a href="//slashdot.org/~DutchUncle">(826473)</a></span></a></span><span class="writes" style="display:none"> writes:</span>
+			<span class="otherdetails" id="comment_otherdetails_45830151"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_45830151">Sounds like "realistic expectations" to me.  Another comment from a similar colleague:  Arranged marriages (at the level his family expected) were more like business partnerships put together by VCs.  The families and/or their agents/matchmakers were looking for good combinations who would not have met by chance - even if they went to the same school or trade show (if only because genders are carefully polite in their culture).</div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_45830151">
+
+</div>
+</div>
+
+<div id="replyto_45830151"></div>
+
+<ul id="group_45830151">
+	<li id="hiddens_45830151" class="hide"></li>
+</ul>
+
+</li><li id="tree_45830155" class="comment oneline"><span class="ind"></span>
+<div id="comment_status_45830155" class="commentstatus"></div>
+<div id="comment_45830155" class="cw">
+	<div id="comment_top_45830155" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_45830155" name="comment_link_45830155" href="//slashdot.org/comments.pl?sid=4615283&amp;cid=45830155" onclick="return D2.setFocusComment(45830155)" >Re:</a>
+
+
+		 	<span id="comment_score_45830155" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 45830155); return false"><span class=opt>Score:</span>2</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~Zibodiz">Zibodiz</a>  <span class="uid"><a href="//slashdot.org/~Zibodiz">(2160038)</a></span></a></span><span class="writes" style="display:none"> writes:</span>
+			<span class="otherdetails" id="comment_otherdetails_45830155"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_45830155">This.  However, I will add something:  Having similar goals and work ethic is important.  I think, ultimately, people can work through almost any differences with a positive outcome, as long as their religion, work ethic, and life goals are similar.  Pretty much the 'big picture' stuff.  Of the girls I dated before marrying my wife, I can honestly say that I *could* have made it work with any of them, with the exception of those points.  Religion is, frankly, flexible enough that it doesn't seem to need to</div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_45830155">
+
+</div>
+</div>
+
+<div id="replyto_45830155"></div>
+
+<ul id="group_45830155">
+	<li id="hiddens_45830155" class="hide"></li>
+</ul>
+
+</li></ul></li><li id="tree_45828977" class="comment oneline"><span class="ind"></span>
+<div id="comment_status_45828977" class="commentstatus"></div>
+<div id="comment_45828977" class="cw">
+	<div id="comment_top_45828977" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_45828977" name="comment_link_45828977" href="//slashdot.org/comments.pl?sid=4615283&amp;cid=45828977" onclick="return D2.setFocusComment(45828977)" >Re:</a>
+
+
+		 	<span id="comment_score_45828977" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 45828977); return false"><span class=opt>Score:</span>2</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~gweihir">gweihir</a>  <span class="uid"><a href="//slashdot.org/~gweihir">(88907)</a></span></a></span><span class="writes" style="display:none"> writes:</span>
+			<span class="otherdetails" id="comment_otherdetails_45828977"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_45828977"><p>Looks are pretty much unimportant, or rather if you are halfway sane you do not want to date anybody looking like a "supermodel". It either comes with neuroses or a huge ego not justified by anything. One the other hand, people dating on looks may just get what they deserve.</p></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_45828977">
+
+</div>
+</div>
+
+<div id="replyto_45828977"></div>
+
+<ul id="group_45828977">
+	<li id="hiddens_45828977" class="hide"></li>
+</ul>
+
+<ul id="commtree_45828977"><li id="tree_45829175" class="comment oneline"><span class="ind"></span>
+<div id="comment_status_45829175" class="commentstatus"></div>
+<div id="comment_45829175" class="cw">
+	<div id="comment_top_45829175" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_45829175" name="comment_link_45829175" href="//slashdot.org/comments.pl?sid=4615283&amp;cid=45829175" onclick="return D2.setFocusComment(45829175)" >Re:</a>
+
+
+		 	<span id="comment_score_45829175" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 45829175); return false"><span class=opt>Score:</span>2</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~gstoddart">gstoddart</a>  <span class="uid"><a href="//slashdot.org/~gstoddart">(321705)</a></span></a></span><span class="writes" style="display:none"> writes:</span>
+			<span class="otherdetails" id="comment_otherdetails_45829175"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_45829175"><p>I agree with you, but I've also known someone who is 100+ pounds overweight who outright refuses to date women who are also a little on the heavy side.  It's hard not to think "have you really looked at yourself in a mirror?"</p><p>Some people just have completely unrealistic expectations about who they might potentially be able to date.</p><p>Me, I figure find someone you can get along with and have things in common with, and the rest is just details.</p></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_45829175">
+
+</div>
+</div>
+
+<div id="replyto_45829175"></div>
+
+<ul id="group_45829175">
+	<li id="hiddens_45829175" class="hide"></li>
+</ul>
+
+<ul id="commtree_45829175"><li id="tree_45829637" class="comment oneline"><span class="ind"></span>
+<div id="comment_status_45829637" class="commentstatus"></div>
+<div id="comment_45829637" class="cw">
+	<div id="comment_top_45829637" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_45829637" name="comment_link_45829637" href="//slashdot.org/comments.pl?sid=4615283&amp;cid=45829637" onclick="return D2.setFocusComment(45829637)" >Re:</a>
+
+
+		 	<span id="comment_score_45829637" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 45829637); return false"><span class=opt>Score:</span>2</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~gweihir">gweihir</a>  <span class="uid"><a href="//slashdot.org/~gweihir">(88907)</a></span></a></span><span class="writes" style="display:none"> writes:</span>
+			<span class="otherdetails" id="comment_otherdetails_45829637"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_45829637"><p>I think the problem is more that these people have a complete unrealistic self-image. For tech people, you can observe that regularly in forums: The ones claiming the highest authority are typically somewhere from clueless to mediocre. I think this is the same effect at work. On the plus side, this means far less likelihood of these idiots reproducing, so I do not believe "fixing" this is desirable.</p></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_45829637">
+
+</div>
+</div>
+
+<div id="replyto_45829637"></div>
+
+<ul id="group_45829637">
+	<li id="hiddens_45829637" class="hide"></li>
+</ul>
+
+</li></ul></li><li id="tree_45829355" class="comment oneline"><span class="ind"></span>
+<div id="comment_status_45829355" class="commentstatus"></div>
+<div id="comment_45829355" class="cw">
+	<div id="comment_top_45829355" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_45829355" name="comment_link_45829355" href="//slashdot.org/comments.pl?sid=4615283&amp;cid=45829355" onclick="return D2.setFocusComment(45829355)" >Re:</a>
+
+
+		 	<span id="comment_score_45829355" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 45829355); return false"><span class=opt>Score:</span>3</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~Grishnakh">Grishnakh</a>  <span class="uid"><a href="//slashdot.org/~Grishnakh">(216268)</a></span></a></span><span class="writes" style="display:none"> writes:</span>
+			<span class="otherdetails" id="comment_otherdetails_45829355"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_45829355"><p><span class="substr"> </span> <i>Looks are pretty much unimportant, or rather if you are halfway sane you do not want to date anybody looking like a "supermodel". It either comes with neuroses or a huge ego not justified by anything. </i> </p><p>There's a big difference between only dating supermodels and refusing to date someone who's extremely unattractive (for instance, morbidly obese).  A lot of men avoid overly-attractive women as they assume they're "high maintenance", and look for women in the next tier down (the "girl next door" type); they wa</p></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_45829355">
+
+</div>
+</div>
+
+<div id="replyto_45829355"></div>
+
+<ul id="group_45829355">
+	<li id="hiddens_45829355" class="hide"></li>
+</ul>
+
+<ul id="commtree_45829355"><li id="tree_45829671" class="comment oneline"><span class="ind"></span>
+<div id="comment_status_45829671" class="commentstatus"></div>
+<div id="comment_45829671" class="cw">
+	<div id="comment_top_45829671" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_45829671" name="comment_link_45829671" href="//slashdot.org/comments.pl?sid=4615283&amp;cid=45829671" onclick="return D2.setFocusComment(45829671)" >Re:</a>
+
+
+		 	<span id="comment_score_45829671" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 45829671); return false"><span class=opt>Score:</span>2</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~gweihir">gweihir</a>  <span class="uid"><a href="//slashdot.org/~gweihir">(88907)</a></span></a></span><span class="writes" style="display:none"> writes:</span>
+			<span class="otherdetails" id="comment_otherdetails_45829671"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_45829671"><p>You are talking about criteria for an one-night-stand, not for a relationship or for founding a family. Maybe that is the reason so few relationships keep these days: Wrong selection criteria.</p></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_45829671">
+
+</div>
+</div>
+
+<div id="replyto_45829671"></div>
+
+<ul id="group_45829671">
+	<li id="hiddens_45829671" class="hide"></li>
+</ul>
+
+<ul id="commtree_45829671"><li id="tree_45830073" class="comment oneline"><span class="ind"></span>
+<div id="comment_status_45830073" class="commentstatus"></div>
+<div id="comment_45830073" class="cw">
+	<div id="comment_top_45830073" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_45830073" name="comment_link_45830073" href="//slashdot.org/comments.pl?sid=4615283&amp;cid=45830073" onclick="return D2.setFocusComment(45830073)" >Re:</a>
+
+
+		 	<span id="comment_score_45830073" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 45830073); return false"><span class=opt>Score:</span>1</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~Nephandus">Nephandus</a>  <span class="uid"><a href="//slashdot.org/~Nephandus">(2953269)</a></span></a></span><span class="writes" style="display:none"> writes:</span>
+			<span class="otherdetails" id="comment_otherdetails_45830073"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_45830073">Attraction is still a criteria. Otherwise, sex isn't getting involved since some of us aren't whoring out for farces like "family" or a "relationship" for the sake of saying you've got a "relationship". That's a fuck up situation where you put up with someone you don't want to play house...</div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_45830073">
+
+</div>
+</div>
+
+<div id="replyto_45830073"></div>
+
+<ul id="group_45830073">
+	<li id="hiddens_45830073" class="hide"></li>
+</ul>
+
+</li></ul></li></ul></li></ul></li><li id="tree_45829393" class="comment oneline"><span class="ind"></span>
+<div id="comment_status_45829393" class="commentstatus"></div>
+<div id="comment_45829393" class="cw">
+	<div id="comment_top_45829393" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_45829393" name="comment_link_45829393" href="//slashdot.org/comments.pl?sid=4615283&amp;cid=45829393" onclick="return D2.setFocusComment(45829393)" >Re:</a>
+
+
+		 	<span id="comment_score_45829393" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 45829393); return false"><span class=opt>Score:</span>2</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~Sique">Sique</a>  <span class="uid"><a href="//slashdot.org/~Sique">(173459)</a></span></a></span><span class="writes" style="display:none"> writes:</span>
+			<span class="otherdetails" id="comment_otherdetails_45829393"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_45829393">I don't think you got it right. There are people who are not much into dating at all, and while they might not say no to a supermodel, most other people to them are just not worth the hassle. They don't put much effort into dating at all, and if they refuse a date, it's not because they think they could do better, it's because they simply aren't interested. Not everyone boosts their self-esteem by trying to score as many dates as possible.
+<p>
+I for once never was much into dating at all, and I don't think I e<span class="substr"> </span></p></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_45829393">
+
+</div>
+</div>
+
+<div id="replyto_45829393"></div>
+
+<ul id="group_45829393">
+	<li id="hiddens_45829393" class="hide"></li>
+</ul>
+
+</li><li id="tree_45829565" class="comment oneline"><span class="ind"></span>
+<div id="comment_status_45829565" class="commentstatus"></div>
+<div id="comment_45829565" class="cw">
+	<div id="comment_top_45829565" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_45829565" name="comment_link_45829565" href="//slashdot.org/comments.pl?sid=4615283&amp;cid=45829565" onclick="return D2.setFocusComment(45829565)" >Re:</a>
+
+
+		 	<span id="comment_score_45829565" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 45829565); return false"><span class=opt>Score:</span>2</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~Connie_Lingus">Connie_Lingus</a>  <span class="uid"><a href="//slashdot.org/~Connie_Lingus">(317691)</a></span></a></span><span class="writes" style="display:none"> writes:</span>
+			<span class="otherdetails" id="comment_otherdetails_45829565"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_45829565"><p>since it's slashdot, here is a very sensible algorithm for dating...</p><p>take a hard honest look at yourself and all your pluses and minus, and rank yourself 1 to 10.  its important to be realistic...</p><p>now, give yourself a range of +1.5 to -1.5 and only go after others who fall in that range.</p><p>so for example, if your a 7, your range should be 5.5 to 8.5...</p><p>it really isn't the dumbest thing ever.</p></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_45829565">
+
+</div>
+</div>
+
+<div id="replyto_45829565"></div>
+
+<ul id="group_45829565">
+	<li id="hiddens_45829565" class="hide"></li>
+</ul>
+
+<ul id="commtree_45829565"><li id="tree_45829947" class="comment oneline"><span class="ind"></span>
+<div id="comment_status_45829947" class="commentstatus"></div>
+<div id="comment_45829947" class="cw">
+	<div id="comment_top_45829947" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_45829947" name="comment_link_45829947" href="//slashdot.org/comments.pl?sid=4615283&amp;cid=45829947" onclick="return D2.setFocusComment(45829947)" >Re:</a>
+
+
+		 	<span id="comment_score_45829947" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 45829947); return false"><span class=opt>Score:</span>2</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~Sique">Sique</a>  <span class="uid"><a href="//slashdot.org/~Sique">(173459)</a></span></a></span><span class="writes" style="display:none"> writes:</span>
+			<span class="otherdetails" id="comment_otherdetails_45829947"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_45829947">Actually, it's not so easy, as a 1..10 scale is not really covering anything. I would for instance have a problem dating a devout, pious woman, though she might be attractive by most other criteria. On the other hand, if she appears bookish and has excellent verbal skills (or even be bilingual), I could be very interested. For some reason I seem to fall for some quirks in the personality of people. I am really bad at estimating other people's intelligence, but I like it if they appear to think strategically</div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_45829947">
+
+</div>
+</div>
+
+<div id="replyto_45829947"></div>
+
+<ul id="group_45829947">
+	<li id="hiddens_45829947" class="hide"></li>
+</ul>
+
+</li></ul></li><li id="tree_45830047" class="comment hidden"><span class="ind"></span>
+<div id="comment_status_45830047" class="commentstatus"></div>
+<div id="comment_45830047" class="cw">
+</div>
+
+<div id="replyto_45830047"></div>
+
+<ul id="group_45830047">
+	<li id="hiddens_45830047" class="hide"></li>
+</ul>
+
+</li><li id="hidestring_45828705"><noscript><b class='more'><span class="ind"></span><a href="//slashdot.org/comments.pl?sid=4615283&amp;threshold=-1&amp;commentsort=0&amp;mode=thread&amp;pid=45828705">1 reply</a> beneath your current threshold.</b></noscript></li></ul></li><li id="tree_45828721" class="comment hidden"><span class="ind"></span>
+<div id="comment_status_45828721" class="commentstatus"></div>
+<div id="comment_45828721" class="cw">
+</div>
+
+<div id="replyto_45828721"></div>
+
+<ul id="group_45828721">
+	<li id="hiddens_45828721" class="hide"></li>
+</ul>
+
+</li><li id="tree_45828813" class="comment hidden"><span class="ind"></span>
+<div id="comment_status_45828813" class="commentstatus"></div>
+<div id="comment_45828813" class="cw">
+</div>
+
+<div id="replyto_45828813"></div>
+
+<ul id="group_45828813">
+	<li id="hiddens_45828813" class="hide"></li>
+</ul>
+
+</li><li id="tree_45828849" class="comment oneline"><span class="ind"></span>
+<div id="comment_status_45828849" class="commentstatus"></div>
+<div id="comment_45828849" class="cw">
+	<div id="comment_top_45828849" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_45828849" name="comment_link_45828849" href="//slashdot.org/comments.pl?sid=4615283&amp;cid=45828849" onclick="return D2.setFocusComment(45828849)" >Re:</a>
+
+
+		 	<span id="comment_score_45828849" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 45828849); return false"><span class=opt>Score:</span>3</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~CubicleZombie">CubicleZombie</a>  <span class="uid"><a href="//slashdot.org/~CubicleZombie">(2590497)</a></span></a></span><span class="writes" style="display:none"> writes:</span>
+			<span class="otherdetails" id="comment_otherdetails_45828849"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_45828849"><p><div class="quote"><p>What we need is an algorithm to convince people to lower their expectations when they're unattractive, boring, unmannerly, old, poor and/or cheap, have baggage, etc.</p></div><p>Someone already wrote that in Perl.  It's called Craigslist.</p></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_45828849">
+
+</div>
+</div>
+
+<div id="replyto_45828849"></div>
+
+<ul id="group_45828849">
+	<li id="hiddens_45828849" class="hide"></li>
+</ul>
+
+</li><li id="tree_45828867" class="comment oneline"><span class="ind"></span>
+<div id="comment_status_45828867" class="commentstatus"></div>
+<div id="comment_45828867" class="cw">
+	<div id="comment_top_45828867" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_45828867" name="comment_link_45828867" href="//slashdot.org/comments.pl?sid=4615283&amp;cid=45828867" onclick="return D2.setFocusComment(45828867)" >Re:</a>
+
+
+		 	<span id="comment_score_45828867" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 45828867); return false"><span class=opt>Score:</span>1</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~gregski">gregski</a>  <span class="uid"><a href="//slashdot.org/~gregski">(765387)</a></span></a></span><span class="writes" style="display:none"> writes:</span>
+			<span class="otherdetails" id="comment_otherdetails_45828867"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_45828867"><p>this is exactly the problem this algorithm attempts to solve:</p><p>"They also analyze the replies you receive and use this to evaluate your attractiveness (or unattractiveness). Obviously boys and girls who receive more replies are more attractive. When it takes this into account, it can recommend potential dates who not only match your taste but ones who are more likely to think you attractive and therefore to reply. "The model considers a user's "taste" in picking others and "attractiveness" in being picked by<span class="substr"> </span></p></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_45828867">
+
+</div>
+</div>
+
+<div id="replyto_45828867"></div>
+
+<ul id="group_45828867">
+	<li id="hiddens_45828867" class="hide"></li>
+</ul>
+
+<ul id="commtree_45828867"><li id="tree_45830177" class="comment hidden"><span class="ind"></span>
+<div id="comment_status_45830177" class="commentstatus"></div>
+<div id="comment_45830177" class="cw">
+</div>
+
+<div id="replyto_45830177"></div>
+
+<ul id="group_45830177">
+	<li id="hiddens_45830177" class="hide"></li>
+</ul>
+
+</li><li id="hidestring_45828867"><noscript><b class='more'><span class="ind"></span><a href="//slashdot.org/comments.pl?sid=4615283&amp;threshold=-1&amp;commentsort=0&amp;mode=thread&amp;pid=45828867">1 reply</a> beneath your current threshold.</b></noscript></li></ul></li><li id="tree_45828899" class="comment oneline"><span class="ind"></span>
+<div id="comment_status_45828899" class="commentstatus"></div>
+<div id="comment_45828899" class="cw">
+	<div id="comment_top_45828899" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_45828899" name="comment_link_45828899" href="//slashdot.org/comments.pl?sid=4615283&amp;cid=45828899" onclick="return D2.setFocusComment(45828899)" >Re:</a>
+
+
+		 	<span id="comment_score_45828899" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 45828899); return false"><span class=opt>Score:</span>1</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~Alopex">Alopex</a>  <span class="uid"><a href="//slashdot.org/~Alopex">(1973486)</a></span></a></span><span class="writes" style="display:none"> writes:</span>
+			<span class="otherdetails" id="comment_otherdetails_45828899"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_45828899">Some people would rather be single than date someone who is considered an even match, which is a perfectly fair decision.
+
+Also, consider hypergamy (http://en.wikipedia.org/wiki/Hypergamy), which is already quite common.</div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_45828899">
+
+</div>
+</div>
+
+<div id="replyto_45828899"></div>
+
+<ul id="group_45828899">
+	<li id="hiddens_45828899" class="hide"></li>
+</ul>
+
+</li><li id="tree_45828937" class="comment hidden"><span class="ind"></span>
+<div id="comment_status_45828937" class="commentstatus"></div>
+<div id="comment_45828937" class="cw">
+</div>
+
+<div id="replyto_45828937"></div>
+
+<ul id="group_45828937">
+	<li id="hiddens_45828937" class="hide"></li>
+</ul>
+
+</li><li id="tree_45829019" class="comment hidden"><span class="ind"></span>
+<div id="comment_status_45829019" class="commentstatus"></div>
+<div id="comment_45829019" class="cw">
+</div>
+
+<div id="replyto_45829019"></div>
+
+<ul id="group_45829019">
+	<li id="hiddens_45829019" class="hide"></li>
+</ul>
+
+</li><li id="tree_45829101" class="comment oneline"><span class="ind"></span>
+<div id="comment_status_45829101" class="commentstatus"></div>
+<div id="comment_45829101" class="cw">
+	<div id="comment_top_45829101" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_45829101" name="comment_link_45829101" href="//slashdot.org/comments.pl?sid=4615283&amp;cid=45829101" onclick="return D2.setFocusComment(45829101)" >Re:</a>
+
+
+		 	<span id="comment_score_45829101" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 45829101); return false"><span class=opt>Score:</span>2</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~Gothmolly">Gothmolly</a>  <span class="uid"><a href="//slashdot.org/~Gothmolly">(148874)</a></span></a></span><span class="writes" style="display:none"> writes:</span>
+			<span class="otherdetails" id="comment_otherdetails_45829101"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_45829101"><p><i>What we need is an algorithm to convince people to lower their expectations <b>because</b> they're unattractive, boring, unmannerly, old, poor and/or cheap, have baggage, etc.</i></p><p>FTFY.   Nobody is a supermodel, or terribly interesting.</p></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_45829101">
+
+</div>
+</div>
+
+<div id="replyto_45829101"></div>
+
+<ul id="group_45829101">
+	<li id="hiddens_45829101" class="hide"></li>
+</ul>
+
+</li><li id="tree_45829151" class="comment oneline"><span class="ind"></span>
+<div id="comment_status_45829151" class="commentstatus"></div>
+<div id="comment_45829151" class="cw">
+	<div id="comment_top_45829151" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_45829151" name="comment_link_45829151" href="//slashdot.org/comments.pl?sid=4615283&amp;cid=45829151" onclick="return D2.setFocusComment(45829151)" >Re:</a>
+
+
+		 	<span id="comment_score_45829151" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 45829151); return false"><span class=opt>Score:</span>2</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~tomhath">tomhath</a>  <span class="uid"><a href="//slashdot.org/~tomhath">(637240)</a></span></a></span><span class="writes" style="display:none"> writes:</span>
+			<span class="otherdetails" id="comment_otherdetails_45829151"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_45829151"><p><div class="quote"><p>an algorithm to convince people to lower their expectations</p></div><p>I suspect that's exactly what his algorithm does.</p><p><div class="quote"><p>enabling the machine to 'learn' and hence propose higher potential matches</p></div></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_45829151">
+
+</div>
+</div>
+
+<div id="replyto_45829151"></div>
+
+<ul id="group_45829151">
+	<li id="hiddens_45829151" class="hide"></li>
+</ul>
+
+</li><li id="tree_45829235" class="comment hidden"><span class="ind"></span>
+<div id="comment_status_45829235" class="commentstatus"></div>
+<div id="comment_45829235" class="cw">
+</div>
+
+<div id="replyto_45829235"></div>
+
+<ul id="group_45829235">
+	<li id="hiddens_45829235" class="hide"></li>
+</ul>
+
+<ul id="commtree_45829235"><li id="tree_45829975" class="comment oneline"><span class="ind"></span>
+<div id="comment_status_45829975" class="commentstatus"></div>
+<div id="comment_45829975" class="cw">
+	<div id="comment_top_45829975" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_45829975" name="comment_link_45829975" href="//slashdot.org/comments.pl?sid=4615283&amp;cid=45829975" onclick="return D2.setFocusComment(45829975)" >Re:</a>
+
+
+		 	<span id="comment_score_45829975" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 45829975); return false"><span class=opt>Score:</span>2</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~dragon-file">dragon-file</a>  <span class="uid"><a href="//slashdot.org/~dragon-file">(2241656)</a></span></a></span><span class="writes" style="display:none"> writes:</span>
+			<span class="otherdetails" id="comment_otherdetails_45829975"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_45829975">There's a name for that. Bell curve I think.</div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_45829975">
+
+</div>
+</div>
+
+<div id="replyto_45829975"></div>
+
+<ul id="group_45829975">
+	<li id="hiddens_45829975" class="hide"></li>
+</ul>
+
+</li></ul></li><li id="tree_45829289" class="comment oneline"><span class="ind"></span>
+<div id="comment_status_45829289" class="commentstatus"></div>
+<div id="comment_45829289" class="cw">
+	<div id="comment_top_45829289" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_45829289" name="comment_link_45829289" href="//slashdot.org/comments.pl?sid=4615283&amp;cid=45829289" onclick="return D2.setFocusComment(45829289)" >Re:</a>
+
+
+		 	<span id="comment_score_45829289" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 45829289); return false"><span class=opt>Score:</span>3</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~Grishnakh">Grishnakh</a>  <span class="uid"><a href="//slashdot.org/~Grishnakh">(216268)</a></span></a></span><span class="writes" style="display:none"> writes:</span>
+			<span class="otherdetails" id="comment_otherdetails_45829289"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_45829289"><p><span class="substr"> </span> <i>What we need is an algorithm to convince people to lower their expectations when they're unattractive, boring, unmannerly, old, poor and/or cheap, have baggage, etc.</i> </p><p>The problem here is that there's no way for an algorithm to know these things about someone.  No one puts on their online dating profile, "I'm a cheap-ass, I have terrible manners, and I still have issues about my ex-wife even though we divorced 15 years ago."  They only put the good parts.  They even dress up the photos, like showing only their</p></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_45829289">
+
+</div>
+</div>
+
+<div id="replyto_45829289"></div>
+
+<ul id="group_45829289">
+	<li id="hiddens_45829289" class="hide"></li>
+</ul>
+
+</li><li id="hidestring_45828601"><noscript><b class='more'><span class="ind"></span><a href="//slashdot.org/comments.pl?sid=4615283&amp;threshold=-1&amp;commentsort=0&amp;mode=thread&amp;pid=45828601">6 replies</a> beneath your current threshold.</b></noscript></li></ul></li><li id="tree_45828619" class="comment oneline"><span class="ind"></span>
+<div id="comment_status_45828619" class="commentstatus"></div>
+<div id="comment_45828619" class="cw">
+	<div id="comment_top_45828619" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_45828619" name="comment_link_45828619" href="//slashdot.org/comments.pl?sid=4615283&amp;cid=45828619" onclick="return D2.setFocusComment(45828619)" >Dupe</a>
+
+
+		 	<span id="comment_score_45828619" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 45828619); return false"><span class=opt>Score:</span>2</a>, Informative)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span>Anonymous Coward</span><span class="writes" style="display:none"> writes:</span>
+			<span class="otherdetails" id="comment_otherdetails_45828619"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_45828619"><p><div class="quote"><p> His research was recently covered in both a Forbes' article and the MIT Technology Review</p></div><p>It was also recently covered on <a href="http://tech.slashdot.org/story/13/11/30/1637253/ai-reality-check-in-online-dating" title="slashdot.org" rel="nofollow">Slasdot</a> [slashdot.org].</p></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_45828619">
+
+</div>
+</div>
+
+<div id="replyto_45828619"></div>
+
+<ul id="group_45828619">
+	<li id="hiddens_45828619" class="hide"></li>
+</ul>
+
+</li><li id="tree_45828627" class="comment oneline"><span class="ind"></span>
+<div id="comment_status_45828627" class="commentstatus"></div>
+<div id="comment_45828627" class="cw">
+	<div id="comment_top_45828627" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_45828627" name="comment_link_45828627" href="//slashdot.org/comments.pl?sid=4615283&amp;cid=45828627" onclick="return D2.setFocusComment(45828627)" >Profiles Not Everything</a>
+
+
+		 	<span id="comment_score_45828627" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 45828627); return false"><span class=opt>Score:</span>1</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span>Anonymous Coward</span><span class="writes" style="display:none"> writes:</span>
+			<span class="otherdetails" id="comment_otherdetails_45828627"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_45828627"><p>This doesn't take into account chemistry, which is where feeling love comes from.  If you want the logical mate, then sure you can probably create something like this.  If you want a real match, you'll also need to send in hormones and blood samples for testing.  It would probably also help if people didn't lie so much online.</p></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_45828627">
+
+</div>
+</div>
+
+<div id="replyto_45828627"></div>
+
+<ul id="group_45828627">
+	<li id="hiddens_45828627" class="hide"></li>
+</ul>
+
+</li><li id="tree_45828643" class="comment oneline"><span class="ind"></span>
+<div id="comment_status_45828643" class="commentstatus"></div>
+<div id="comment_45828643" class="cw">
+	<div id="comment_top_45828643" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_45828643" name="comment_link_45828643" href="//slashdot.org/comments.pl?sid=4615283&amp;cid=45828643" onclick="return D2.setFocusComment(45828643)" >GIGO</a>
+
+
+		 	<span id="comment_score_45828643" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 45828643); return false"><span class=opt>Score:</span>1</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~sinij">sinij</a>  <span class="uid"><a href="//slashdot.org/~sinij">(911942)</a></span></a></span><span class="writes" style="display:none"> writes:</span>
+			<span class="otherdetails" id="comment_otherdetails_45828643"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_45828643">Garbage In Garbage Out.<br> <br> Who writes honest truth in the online dating profile? It is all about posturing and posing.</div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_45828643">
+
+</div>
+</div>
+
+<div id="replyto_45828643"></div>
+
+<ul id="group_45828643">
+	<li id="hiddens_45828643" class="hide"></li>
+</ul>
+
+<ul id="commtree_45828643"><li id="tree_45828815" class="comment oneline"><span class="ind"></span>
+<div id="comment_status_45828815" class="commentstatus"></div>
+<div id="comment_45828815" class="cw">
+	<div id="comment_top_45828815" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_45828815" name="comment_link_45828815" href="//slashdot.org/comments.pl?sid=4615283&amp;cid=45828815" onclick="return D2.setFocusComment(45828815)" >Re:</a>
+
+
+		 	<span id="comment_score_45828815" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 45828815); return false"><span class=opt>Score:</span>2</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~sinij">sinij</a>  <span class="uid"><a href="//slashdot.org/~sinij">(911942)</a></span></a></span><span class="writes" style="display:none"> writes:</span>
+			<span class="otherdetails" id="comment_otherdetails_45828815"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_45828815">For people downvoting above - the reason you are still single is because you have unrealistically high opinion of your own charm, attractiveness, generosity, and achievements. Relationships are about getting along and building trust, not about putting yourself on a pedestal with a puffed-up profile. Unlike job interviews, it hurts relationships to over-sell yourself by introducing inevitable disappointment and distrust at the very early stages of it.</div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_45828815">
+
+</div>
+</div>
+
+<div id="replyto_45828815"></div>
+
+<ul id="group_45828815">
+	<li id="hiddens_45828815" class="hide"></li>
+</ul>
+
+<ul id="commtree_45828815"><li id="tree_45828935" class="comment oneline"><span class="ind"></span>
+<div id="comment_status_45828935" class="commentstatus"></div>
+<div id="comment_45828935" class="cw">
+	<div id="comment_top_45828935" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_45828935" name="comment_link_45828935" href="//slashdot.org/comments.pl?sid=4615283&amp;cid=45828935" onclick="return D2.setFocusComment(45828935)" >Re:</a>
+
+
+		 	<span id="comment_score_45828935" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 45828935); return false"><span class=opt>Score:</span>2</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~Antique+Geekmeister">Antique Geekmeister</a>  <span class="uid"><a href="//slashdot.org/~Antique+Geekmeister">(740220)</a></span></a></span><span class="writes" style="display:none"> writes:</span>
+			<span class="otherdetails" id="comment_otherdetails_45828935"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_45828935"><p>&gt;  the reason you are still single is because you have unrealistically high opinion of your own charm</p><p>As opposed to " the reason you are still single is because you don't try"? Arrogance, which is what you're describing, can actually help. It can provide the confidence to actually ask out potential dates, to believe that you're worth spending time with, and get you past failures. Never trying is guaranteed failure, and it's too common.</p></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_45828935">
+
+</div>
+</div>
+
+<div id="replyto_45828935"></div>
+
+<ul id="group_45828935">
+	<li id="hiddens_45828935" class="hide"></li>
+</ul>
+
+</li><li id="tree_45829415" class="comment oneline"><span class="ind"></span>
+<div id="comment_status_45829415" class="commentstatus"></div>
+<div id="comment_45829415" class="cw">
+	<div id="comment_top_45829415" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_45829415" name="comment_link_45829415" href="//slashdot.org/comments.pl?sid=4615283&amp;cid=45829415" onclick="return D2.setFocusComment(45829415)" >Re:</a>
+
+
+		 	<span id="comment_score_45829415" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 45829415); return false"><span class=opt>Score:</span>2</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~Grishnakh">Grishnakh</a>  <span class="uid"><a href="//slashdot.org/~Grishnakh">(216268)</a></span></a></span><span class="writes" style="display:none"> writes:</span>
+			<span class="otherdetails" id="comment_otherdetails_45829415"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_45829415"><p>Totally wrong.  Arrogance and lying actually work really well for many men.  Those men get laid a lot more than the honest and humble men.  You can debate whether it's worth it in the long term or not (he might be stuck with multiple child-support payments in his 40s), but it is a winning reproductive and dating strategy.</p></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_45829415">
+
+</div>
+</div>
+
+<div id="replyto_45829415"></div>
+
+<ul id="group_45829415">
+	<li id="hiddens_45829415" class="hide"></li>
+</ul>
+
+<ul id="commtree_45829415"><li id="tree_45829579" class="comment hidden"><span class="ind"></span>
+<div id="comment_status_45829579" class="commentstatus"></div>
+<div id="comment_45829579" class="cw">
+</div>
+
+<div id="replyto_45829579"></div>
+
+<ul id="group_45829579">
+	<li id="hiddens_45829579" class="hide"></li>
+</ul>
+
+</li><li id="tree_45829619" class="comment oneline"><span class="ind"></span>
+<div id="comment_status_45829619" class="commentstatus"></div>
+<div id="comment_45829619" class="cw">
+	<div id="comment_top_45829619" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_45829619" name="comment_link_45829619" href="//slashdot.org/comments.pl?sid=4615283&amp;cid=45829619" onclick="return D2.setFocusComment(45829619)" >Re:</a>
+
+
+		 	<span id="comment_score_45829619" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 45829619); return false"><span class=opt>Score:</span>2</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~Connie_Lingus">Connie_Lingus</a>  <span class="uid"><a href="//slashdot.org/~Connie_Lingus">(317691)</a></span></a></span><span class="writes" style="display:none"> writes:</span>
+			<span class="otherdetails" id="comment_otherdetails_45829619"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_45829619"><p>+1 spot on</p></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_45829619">
+
+</div>
+</div>
+
+<div id="replyto_45829619"></div>
+
+<ul id="group_45829619">
+	<li id="hiddens_45829619" class="hide"></li>
+</ul>
+
+</li><li id="tree_45830241" class="comment oneline"><span class="ind"></span>
+<div id="comment_status_45830241" class="commentstatus"></div>
+<div id="comment_45830241" class="cw">
+	<div id="comment_top_45830241" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_45830241" name="comment_link_45830241" href="//slashdot.org/comments.pl?sid=4615283&amp;cid=45830241" onclick="return D2.setFocusComment(45830241)" >Re:</a>
+
+
+		 	<span id="comment_score_45830241" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 45830241); return false"><span class=opt>Score:</span>2</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~DutchUncle">DutchUncle</a>  <span class="uid"><a href="//slashdot.org/~DutchUncle">(826473)</a></span></a></span><span class="writes" style="display:none"> writes:</span>
+			<span class="otherdetails" id="comment_otherdetails_45830241"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_45830241">This reminds me of the old story about college roommates going to a party.  The guy who drove immediately walks up to a babe and whispers in her ear, and gets slapped.  Walks up to another, gets slapped again.  The other guy shakes his head and goes to get a beer and find a conversation.  Later, having gotten nowhere and wondering about his ride home, he looks for the first guy and can't find him anywhere.  Finally the driver reappears with a smile on his face, and in no mood to leave.  "Why not?  Aren't yo</div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_45830241">
+
+</div>
+</div>
+
+<div id="replyto_45830241"></div>
+
+<ul id="group_45830241">
+	<li id="hiddens_45830241" class="hide"></li>
+</ul>
+
+</li><li id="hidestring_45829415"><noscript><b class='more'><span class="ind"></span><a href="//slashdot.org/comments.pl?sid=4615283&amp;threshold=-1&amp;commentsort=0&amp;mode=thread&amp;pid=45829415">1 reply</a> beneath your current threshold.</b></noscript></li></ul></li></ul></li></ul></li><li id="tree_45828659" class="comment oneline"><span class="ind"></span>
+<div id="comment_status_45828659" class="commentstatus"></div>
+<div id="comment_45828659" class="cw">
+	<div id="comment_top_45828659" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_45828659" name="comment_link_45828659" href="//slashdot.org/comments.pl?sid=4615283&amp;cid=45828659" onclick="return D2.setFocusComment(45828659)" >Dating Algorithm Corollary</a>
+
+
+		 	<span id="comment_score_45828659" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 45828659); return false"><span class=opt>Score:</span>1</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~rmdingler">rmdingler</a>  <span class="uid"><a href="//slashdot.org/~rmdingler">(1955220)</a></span></a></span><span class="writes" style="display:none"> writes:</span>
+			<span class="otherdetails" id="comment_otherdetails_45828659"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_45828659">Single people will generally settle for a mate with the highest level of superficial physical characteristics they can achieve. <p> This is true even though a homely spouse makes for a much more attentive husband/wife.</p></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_45828659">
+
+</div>
+</div>
+
+<div id="replyto_45828659"></div>
+
+<ul id="group_45828659">
+	<li id="hiddens_45828659" class="hide"></li>
+</ul>
+
+<ul id="commtree_45828659"><li id="tree_45828699" class="comment oneline"><span class="ind"></span>
+<div id="comment_status_45828699" class="commentstatus"></div>
+<div id="comment_45828699" class="cw">
+	<div id="comment_top_45828699" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_45828699" name="comment_link_45828699" href="//slashdot.org/comments.pl?sid=4615283&amp;cid=45828699" onclick="return D2.setFocusComment(45828699)" >Re:</a>
+
+
+		 	<span id="comment_score_45828699" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 45828699); return false"><span class=opt>Score:</span>2</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~sinij">sinij</a>  <span class="uid"><a href="//slashdot.org/~sinij">(911942)</a></span></a></span><span class="writes" style="display:none"> writes:</span>
+			<span class="otherdetails" id="comment_otherdetails_45828699"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_45828699">This is where evolution backfired. It used to be the case that physical characteristics highly correlated with reproductive success, so we are hard-wired to look for them. Sometimes this takes strange detours into fetishes-obsessions, but most of the time we just looking for "good looking".</div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_45828699">
+
+</div>
+</div>
+
+<div id="replyto_45828699"></div>
+
+<ul id="group_45828699">
+	<li id="hiddens_45828699" class="hide"></li>
+</ul>
+
+</li><li id="tree_45828805" class="comment full contain"><span class="ind"></span>
+<div id="comment_status_45828805" class="commentstatus"></div>
+<div id="comment_45828805" class="cw">
+	<div id="comment_top_45828805" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_45828805" name="comment_link_45828805" href="//slashdot.org/comments.pl?sid=4615283&amp;cid=45828805" onclick="return D2.setFocusComment(45828805)" >Re:Dating Algorithm Corollary</a>
+
+
+		 	<span id="comment_score_45828805" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 45828805); return false"><span class=opt>Score:</span>4</a>, Insightful)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~serviscope_minor">serviscope_minor</a>  <span class="uid"><a href="//slashdot.org/~serviscope_minor">(664417)</a></span></a></span><span class="writes" style="display:none"> writes:</span>
+			<span class="otherdetails" id="comment_otherdetails_45828805">
+		on Tuesday December 31, 2013 @10:12AM (<span class="ind"></span><a href="//slashdot.org/comments.pl?sid=4615283&amp;cid=45828805">#45828805</a>)
+		<small><a href="//slashdot.org/~serviscope_minor/journal/" title="Thursday October 06, 2011 @01:59PM" class="user_journal_display">Journal</a> </small>
+</span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_45828805"><p><em>This is true even though a homely spouse makes for a much more attentive husband/wife.</em></p><p>Do they? Ugly people are just as capable of obnoxious behaviour as attractive ones.</p></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_45828805">
+<span class="ind"></span><a id="reply_link_45828805" class="btn link" href="//slashdot.org/comments.pl?sid=4615283&amp;op=Reply&amp;threshold=1&amp;commentsort=0&amp;mode=thread&amp;pid=45828805" onclick="D2.replyTo(45828805); return false;">Reply to This</a> <span class="ind"></span><a class="btn link" href="//slashdot.org/comments.pl?sid=4615283&amp;threshold=1&amp;commentsort=0&amp;mode=thread&amp;cid=45828659" onclick="return D2.selectParent(45828659)">Parent</a> 	<a href="#" class="comment_share_toggle btn link">Share</a>
+	<div class="comment_share sharethis-0 hide"><span class="au"></span>
+		<a class="janrain t" href="#" data-provider="twitter" data-message="Re:Dating Algorithm Corollary by serviscope_minor @slashdot" data-url="http://slashdot.org/comments.pl?sid=4615283&cid=45828805" data-title="Re:Dating Algorithm Corollary">twitter</a>
+		<a class="janrain f" href="#" data-provider="facebook" data-message="Re:Dating Algorithm Corollary by serviscope_minor" data-url="http://slashdot.org/comments.pl?sid=4615283&cid=45828805" data-title="Re:Dating Algorithm Corollary">facebook</a>
+		<a class="janrain l" href="#" data-provider="linkedin" data-message="Re:Dating Algorithm Corollary by serviscope_minor" data-url="http://slashdot.org/comments.pl?sid=4615283&cid=45828805" data-title="Re:Dating Algorithm Corollary">linkedin</a>
+		<a class="g" href="http://plus.google.com/share?url=http://slashdot.org/comments.pl?sid=4615283%26cid=45828805" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><img src="//www.gstatic.com/images/icons/gplus-16.png" alt="Share on Google+"/></a>
+	</div>
+ <span class="ind"></span><a id="reply_link_45828805" title="Flag this comment as Inappropriate" class="ui-icon flag fright" href="//slashdot.org/comments.pl?sid=4615283&amp;op=flag&amp;threshold=1&amp;commentsort=0&amp;mode=thread&amp;pid=45828805" onclick="return false;">Flag as Inappropriate</a>
+</div>
+</div>
+
+<div id="replyto_45828805"></div>
+
+<ul id="group_45828805">
+	<li id="hiddens_45828805" class="hide"></li>
+</ul>
+
+<ul id="commtree_45828805"><li id="tree_45828951" class="comment oneline"><span class="ind"></span>
+<div id="comment_status_45828951" class="commentstatus"></div>
+<div id="comment_45828951" class="cw">
+	<div id="comment_top_45828951" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_45828951" name="comment_link_45828951" href="//slashdot.org/comments.pl?sid=4615283&amp;cid=45828951" onclick="return D2.setFocusComment(45828951)" >Re:</a>
+
+
+		 	<span id="comment_score_45828951" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 45828951); return false"><span class=opt>Score:</span>1</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~Alopex">Alopex</a>  <span class="uid"><a href="//slashdot.org/~Alopex">(1973486)</a></span></a></span><span class="writes" style="display:none"> writes:</span>
+			<span class="otherdetails" id="comment_otherdetails_45828951"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_45828951">I think there is some truth to this. I seldom see drop-dead gorgeous female engineers or scientists. On the other hand, female cheerleaders make me cringe and despair. You don't think there is a strong correlation between attractiveness and personal qualities/careers/etc.?</div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_45828951">
+
+</div>
+</div>
+
+<div id="replyto_45828951"></div>
+
+<ul id="group_45828951">
+	<li id="hiddens_45828951" class="hide"></li>
+</ul>
+
+<ul id="commtree_45828951"><li id="tree_45829155" class="comment oneline"><span class="ind"></span>
+<div id="comment_status_45829155" class="commentstatus"></div>
+<div id="comment_45829155" class="cw">
+	<div id="comment_top_45829155" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_45829155" name="comment_link_45829155" href="//slashdot.org/comments.pl?sid=4615283&amp;cid=45829155" onclick="return D2.setFocusComment(45829155)" >Re:</a>
+
+
+		 	<span id="comment_score_45829155" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 45829155); return false"><span class=opt>Score:</span>3</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~serviscope_minor">serviscope_minor</a>  <span class="uid"><a href="//slashdot.org/~serviscope_minor">(664417)</a></span></a></span><span class="writes" style="display:none"> writes:</span>
+			<span class="otherdetails" id="comment_otherdetails_45829155"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_45829155"><p><span class="substr"> </span> <em> I seldom see drop-dead gorgeous female engineers or scientists....You don't think there is a strong correlation between attractiveness and personal qualities/careers/etc.?</em> </p><p>Let us say that intelligence and attractiveness are uncorrelated.</p><p>The probability of being both at once is very low, since you're multiplying the two small independent probabilities associated with attractiveness and intelligence.</p><p>If, of course you chose any segment of the population not selected specifically for attractiveness, then the pr</p></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_45829155">
+
+</div>
+</div>
+
+<div id="replyto_45829155"></div>
+
+<ul id="group_45829155">
+	<li id="hiddens_45829155" class="hide"></li>
+</ul>
+
+</li><li id="tree_45829443" class="comment oneline"><span class="ind"></span>
+<div id="comment_status_45829443" class="commentstatus"></div>
+<div id="comment_45829443" class="cw">
+	<div id="comment_top_45829443" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_45829443" name="comment_link_45829443" href="//slashdot.org/comments.pl?sid=4615283&amp;cid=45829443" onclick="return D2.setFocusComment(45829443)" >Re:</a>
+
+
+		 	<span id="comment_score_45829443" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 45829443); return false"><span class=opt>Score:</span>3</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~Grishnakh">Grishnakh</a>  <span class="uid"><a href="//slashdot.org/~Grishnakh">(216268)</a></span></a></span><span class="writes" style="display:none"> writes:</span>
+			<span class="otherdetails" id="comment_otherdetails_45829443"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_45829443"><p><span class="substr"> </span> <i> I seldom see drop-dead gorgeous female engineers or scientists.</i> </p><p>That's because smart and gorgeous women know that those professions are underpaid and undervalued in Western (particularly American) society, so they avoid them (they also want to avoid all the sexual harassment).  Instead, these women go into the medical field.  I've met several nearly drop-dead gorgeous female physicians.  And they certainly get better pay and better job security than I do as an engineer, while not being surrounded by creepy</p></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_45829443">
+
+</div>
+</div>
+
+<div id="replyto_45829443"></div>
+
+<ul id="group_45829443">
+	<li id="hiddens_45829443" class="hide"></li>
+</ul>
+
+</li></ul></li><li id="tree_45829503" class="comment oneline"><span class="ind"></span>
+<div id="comment_status_45829503" class="commentstatus"></div>
+<div id="comment_45829503" class="cw">
+	<div id="comment_top_45829503" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_45829503" name="comment_link_45829503" href="//slashdot.org/comments.pl?sid=4615283&amp;cid=45829503" onclick="return D2.setFocusComment(45829503)" >Re:</a>
+
+
+		 	<span id="comment_score_45829503" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 45829503); return false"><span class=opt>Score:</span>1</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span>Anonymous Coward</span><span class="writes" style="display:none"> writes:</span>
+			<span class="otherdetails" id="comment_otherdetails_45829503"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_45829503"><p><div class="quote"><p>Ugly people are just as capable of obnoxious behaviour as attractive ones</p></div><p>True statement. But attractive people (especially women with large breasts) tend to be conditioned by society to think that they are more desirable and hence that they are entitled to be more demanding. Same with guys who are good athletes or have lots of money.</p></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_45829503">
+
+</div>
+</div>
+
+<div id="replyto_45829503"></div>
+
+<ul id="group_45829503">
+	<li id="hiddens_45829503" class="hide"></li>
+</ul>
+
+</li></ul></li><li id="tree_45829659" class="comment oneline"><span class="ind"></span>
+<div id="comment_status_45829659" class="commentstatus"></div>
+<div id="comment_45829659" class="cw">
+	<div id="comment_top_45829659" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_45829659" name="comment_link_45829659" href="//slashdot.org/comments.pl?sid=4615283&amp;cid=45829659" onclick="return D2.setFocusComment(45829659)" >If you want to be Happy</a>
+
+
+		 	<span id="comment_score_45829659" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 45829659); return false"><span class=opt>Score:</span>2</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~Guppy">Guppy</a>  <span class="uid"><a href="//slashdot.org/~Guppy">(12314)</a></span></a></span><span class="writes" style="display:none"> writes:</span>
+			<span class="otherdetails" id="comment_otherdetails_45829659"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_45829659"><p><div class="quote"><p>This is true even though a homely spouse makes for a much more attentive husband/wife.</p></div><p> <a href="http://www.youtube.com/watch?v=9NF5XU-k2Vk" title="youtube.com">Jimmy Soul - If You Want To Be Happy (1963)</a> [youtube.com]</p><p><i>If you wanna be happy for the rest of your life<br>Never make a pretty woman your wife<br>So from my personal point of view<br>Get an ugly girl to marry you</i></p></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_45829659">
+
+</div>
+</div>
+
+<div id="replyto_45829659"></div>
+
+<ul id="group_45829659">
+	<li id="hiddens_45829659" class="hide"></li>
+</ul>
+
+</li></ul></li><li id="tree_45828661" class="comment oneline"><span class="ind"></span>
+<div id="comment_status_45828661" class="commentstatus"></div>
+<div id="comment_45828661" class="cw">
+	<div id="comment_top_45828661" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_45828661" name="comment_link_45828661" href="//slashdot.org/comments.pl?sid=4615283&amp;cid=45828661" onclick="return D2.setFocusComment(45828661)" >Not for me</a>
+
+
+		 	<span id="comment_score_45828661" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 45828661); return false"><span class=opt>Score:</span>1</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~Sigvatr">Sigvatr</a>  <span class="uid"><a href="//slashdot.org/~Sigvatr">(1207234)</a></span></a></span><span class="writes" style="display:none"> writes:</span>
+			<span class="otherdetails" id="comment_otherdetails_45828661"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_45828661">Somehow I get the feeling that I won't have any success with this. I'm a typical Slashdot user.</div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_45828661">
+
+</div>
+</div>
+
+<div id="replyto_45828661"></div>
+
+<ul id="group_45828661">
+	<li id="hiddens_45828661" class="hide"></li>
+</ul>
+
+</li><li id="tree_45828689" class="comment hidden"><span class="ind"></span>
+<div id="comment_status_45828689" class="commentstatus"></div>
+<div id="comment_45828689" class="cw">
+</div>
+
+<div id="replyto_45828689"></div>
+
+<ul id="group_45828689">
+	<li id="hiddens_45828689" class="hide"></li>
+</ul>
+
+</li><li id="tree_45828697" class="comment hidden"><span class="ind"></span>
+<div id="comment_status_45828697" class="commentstatus"></div>
+<div id="comment_45828697" class="cw">
+</div>
+
+<div id="replyto_45828697"></div>
+
+<ul id="group_45828697">
+	<li id="hiddens_45828697" class="hide"></li>
+</ul>
+
+</li><li id="tree_45828713" class="comment full contain"><span class="ind"></span>
+<div id="comment_status_45828713" class="commentstatus"></div>
+<div id="comment_45828713" class="cw">
+	<div id="comment_top_45828713" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_45828713" name="comment_link_45828713" href="//slashdot.org/comments.pl?sid=4615283&amp;cid=45828713" onclick="return D2.setFocusComment(45828713)" >I prefer this formula; it's more honest</a>
+
+
+		 	<span id="comment_score_45828713" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 45828713); return false"><span class=opt>Score:</span>5</a>, Funny)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~tekrat">tekrat</a>  <span class="uid"><a href="//slashdot.org/~tekrat">(242117)</a></span></a></span><span class="writes" style="display:none"> writes:</span>
+			<span class="otherdetails" id="comment_otherdetails_45828713">
+		on Tuesday December 31, 2013 @10:01AM (<span class="ind"></span><a href="//slashdot.org/comments.pl?sid=4615283&amp;cid=45828713">#45828713</a>)
+		<small><a href="http://www.obsolyte.com/" title="http://www.obsolyte.com/" class="user_homepage_display">Homepage</a>
+<a href="//slashdot.org/~tekrat/journal/" title="Sunday January 02, 2005 @06:59AM" class="user_journal_display">Journal</a> </small>
+</span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_45828713"><p>The perfect formula for matchmaking:</p><p>Males: Enter income.<br>Females: Enter attractiveness.</p><p>Match up most attractive to highest earners.</p></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_45828713">
+<span class="ind"></span><a id="reply_link_45828713" class="btn link" href="//slashdot.org/comments.pl?sid=4615283&amp;op=Reply&amp;threshold=1&amp;commentsort=0&amp;mode=thread&amp;pid=45828713" onclick="D2.replyTo(45828713); return false;">Reply to This</a> 	<a href="#" class="comment_share_toggle btn link">Share</a>
+	<div class="comment_share sharethis-0 hide"><span class="au"></span>
+		<a class="janrain t" href="#" data-provider="twitter" data-message="I prefer this formula; it's more honest by tekrat @slashdot" data-url="http://slashdot.org/comments.pl?sid=4615283&cid=45828713" data-title="I prefer this formula; it's more honest">twitter</a>
+		<a class="janrain f" href="#" data-provider="facebook" data-message="I prefer this formula; it's more honest by tekrat" data-url="http://slashdot.org/comments.pl?sid=4615283&cid=45828713" data-title="I prefer this formula; it's more honest">facebook</a>
+		<a class="janrain l" href="#" data-provider="linkedin" data-message="I prefer this formula; it's more honest by tekrat" data-url="http://slashdot.org/comments.pl?sid=4615283&cid=45828713" data-title="I prefer this formula; it's more honest">linkedin</a>
+		<a class="g" href="http://plus.google.com/share?url=http://slashdot.org/comments.pl?sid=4615283%26cid=45828713" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><img src="//www.gstatic.com/images/icons/gplus-16.png" alt="Share on Google+"/></a>
+	</div>
+ <span class="ind"></span><a id="reply_link_45828713" title="Flag this comment as Inappropriate" class="ui-icon flag fright" href="//slashdot.org/comments.pl?sid=4615283&amp;op=flag&amp;threshold=1&amp;commentsort=0&amp;mode=thread&amp;pid=45828713" onclick="return false;">Flag as Inappropriate</a>
+</div>
+</div>
+
+<div id="replyto_45828713"></div>
+
+<ul id="group_45828713">
+	<li id="hiddens_45828713" class="hide"></li>
+</ul>
+
+<ul id="commtree_45828713"><li id="tree_45828955" class="comment oneline"><span class="ind"></span>
+<div id="comment_status_45828955" class="commentstatus"></div>
+<div id="comment_45828955" class="cw">
+	<div id="comment_top_45828955" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_45828955" name="comment_link_45828955" href="//slashdot.org/comments.pl?sid=4615283&amp;cid=45828955" onclick="return D2.setFocusComment(45828955)" >Re:</a>
+
+
+		 	<span id="comment_score_45828955" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 45828955); return false"><span class=opt>Score:</span>1</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span>Anonymous Coward</span><span class="writes" style="display:none"> writes:</span>
+			<span class="otherdetails" id="comment_otherdetails_45828955"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_45828955"><p>You forgot height, since every woman online has a binary filter rating anyone under 6' unacceptable.</p></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_45828955">
+
+</div>
+</div>
+
+<div id="replyto_45828955"></div>
+
+<ul id="group_45828955">
+	<li id="hiddens_45828955" class="hide"></li>
+</ul>
+
+<ul id="commtree_45828955"><li id="tree_45829285" class="comment hidden"><span class="ind"></span>
+<div id="comment_status_45829285" class="commentstatus"></div>
+<div id="comment_45829285" class="cw">
+</div>
+
+<div id="replyto_45829285"></div>
+
+<ul id="group_45829285">
+	<li id="hiddens_45829285" class="hide"></li>
+</ul>
+
+</li><li id="hidestring_45828955"><noscript><b class='more'><span class="ind"></span><a href="//slashdot.org/comments.pl?sid=4615283&amp;threshold=-1&amp;commentsort=0&amp;mode=thread&amp;pid=45828955">1 reply</a> beneath your current threshold.</b></noscript></li></ul></li><li id="tree_45829077" class="comment hidden"><span class="ind"></span>
+<div id="comment_status_45829077" class="commentstatus"></div>
+<div id="comment_45829077" class="cw">
+</div>
+
+<div id="replyto_45829077"></div>
+
+<ul id="group_45829077">
+	<li id="hiddens_45829077" class="hide"></li>
+</ul>
+
+</li><li id="tree_45829907" class="comment oneline"><span class="ind"></span>
+<div id="comment_status_45829907" class="commentstatus"></div>
+<div id="comment_45829907" class="cw">
+	<div id="comment_top_45829907" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_45829907" name="comment_link_45829907" href="//slashdot.org/comments.pl?sid=4615283&amp;cid=45829907" onclick="return D2.setFocusComment(45829907)" >Re:</a>
+
+
+		 	<span id="comment_score_45829907" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 45829907); return false"><span class=opt>Score:</span>1</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~LookIntoTheFuture">LookIntoTheFuture</a>  <span class="uid"><a href="//slashdot.org/~LookIntoTheFuture">(3480731)</a></span></a></span><span class="writes" style="display:none"> writes:</span>
+			<span class="otherdetails" id="comment_otherdetails_45829907"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_45829907">Males: Enter income and Insanity Level Limit. <br>
+Females: Enter attractiveness and Insanity Level. <br> <br>
+
+I went ahead and fixed that for ya.</div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_45829907">
+
+</div>
+</div>
+
+<div id="replyto_45829907"></div>
+
+<ul id="group_45829907">
+	<li id="hiddens_45829907" class="hide"></li>
+</ul>
+
+</li><li id="tree_45830113" class="comment hidden"><span class="ind"></span>
+<div id="comment_status_45830113" class="commentstatus"></div>
+<div id="comment_45830113" class="cw">
+</div>
+
+<div id="replyto_45830113"></div>
+
+<ul id="group_45830113">
+	<li id="hiddens_45830113" class="hide"></li>
+</ul>
+
+</li><li id="hidestring_45828713"><noscript><b class='more'><span class="ind"></span><a href="//slashdot.org/comments.pl?sid=4615283&amp;threshold=-1&amp;commentsort=0&amp;mode=thread&amp;pid=45828713">2 replies</a> beneath your current threshold.</b></noscript></li></ul></li><li id="tree_45828767" class="comment hidden"><span class="ind"></span>
+<div id="comment_status_45828767" class="commentstatus"></div>
+<div id="comment_45828767" class="cw">
+</div>
+
+<div id="replyto_45828767"></div>
+
+<ul id="group_45828767">
+	<li id="hiddens_45828767" class="hide"></li>
+</ul>
+
+</li><li id="tree_45828773" class="comment oneline"><span class="ind"></span>
+<div id="comment_status_45828773" class="commentstatus"></div>
+<div id="comment_45828773" class="cw">
+	<div id="comment_top_45828773" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_45828773" name="comment_link_45828773" href="//slashdot.org/comments.pl?sid=4615283&amp;cid=45828773" onclick="return D2.setFocusComment(45828773)" >Professor Frink says</a>
+
+
+		 	<span id="comment_score_45828773" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 45828773); return false"><span class=opt>Score:</span>2</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~serviscope_minor">serviscope_minor</a>  <span class="uid"><a href="//slashdot.org/~serviscope_minor">(664417)</a></span></a></span><span class="writes" style="display:none"> writes:</span>
+			<span class="otherdetails" id="comment_otherdetails_45828773"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_45828773"><p>Frink: Well, theoretically, yes. But the computer matches would be so perfect as to eliminate the thrill of romantic conquest. Mw-hurgn-whey.</p></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_45828773">
+
+</div>
+</div>
+
+<div id="replyto_45828773"></div>
+
+<ul id="group_45828773">
+	<li id="hiddens_45828773" class="hide"></li>
+</ul>
+
+</li><li id="tree_45828793" class="comment hidden"><span class="ind"></span>
+<div id="comment_status_45828793" class="commentstatus"></div>
+<div id="comment_45828793" class="cw">
+</div>
+
+<div id="replyto_45828793"></div>
+
+<ul id="group_45828793">
+	<li id="hiddens_45828793" class="hide"></li>
+</ul>
+
+<ul id="commtree_45828793"><li id="tree_45829559" class="comment oneline"><span class="ind"></span>
+<div id="comment_status_45829559" class="commentstatus"></div>
+<div id="comment_45829559" class="cw">
+	<div id="comment_top_45829559" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_45829559" name="comment_link_45829559" href="//slashdot.org/comments.pl?sid=4615283&amp;cid=45829559" onclick="return D2.setFocusComment(45829559)" >Re:</a>
+
+
+		 	<span id="comment_score_45829559" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 45829559); return false"><span class=opt>Score:</span>2</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~Grishnakh">Grishnakh</a>  <span class="uid"><a href="//slashdot.org/~Grishnakh">(216268)</a></span></a></span><span class="writes" style="display:none"> writes:</span>
+			<span class="otherdetails" id="comment_otherdetails_45829559"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_45829559"><p>There's a couple of problems here.  1) OKC doesn't have any way of blocking or filtering out people with kids, which apparently you're not open to (which is fine, it's a valid choice as a single man, esp. if you're younger; it gets unrealistic as you get older).  From what I've seen, they only let you block people's messages if they're too far away from you.  It'd be nice if there were more controls this way to block out people with deal-breakers (smoking, etc.)  2) There's no way for OKC to tell if someone<span class="substr"> </span></p></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_45829559">
+
+</div>
+</div>
+
+<div id="replyto_45829559"></div>
+
+<ul id="group_45829559">
+	<li id="hiddens_45829559" class="hide"></li>
+</ul>
+
+</li></ul></li><li id="tree_45828795" class="comment hidden"><span class="ind"></span>
+<div id="comment_status_45828795" class="commentstatus"></div>
+<div id="comment_45828795" class="cw">
+</div>
+
+<div id="replyto_45828795"></div>
+
+<ul id="group_45828795">
+	<li id="hiddens_45828795" class="hide"></li>
+</ul>
+
+</li><li id="tree_45828839" class="comment full contain"><span class="ind"></span>
+<div id="comment_status_45828839" class="commentstatus"></div>
+<div id="comment_45828839" class="cw">
+	<div id="comment_top_45828839" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_45828839" name="comment_link_45828839" href="//slashdot.org/comments.pl?sid=4615283&amp;cid=45828839" onclick="return D2.setFocusComment(45828839)" >Dating Sites</a>
+
+
+		 	<span id="comment_score_45828839" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 45828839); return false"><span class=opt>Score:</span>3</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~Bigbutt">Bigbutt</a>  <span class="uid"><a href="//slashdot.org/~Bigbutt">(65939)</a></span></a></span><span class="writes" style="display:none"> writes:</span>
+			<span class="otherdetails" id="comment_otherdetails_45828839">
+		on Tuesday December 31, 2013 @10:15AM (<span class="ind"></span><a href="//slashdot.org/comments.pl?sid=4615283&amp;cid=45828839">#45828839</a>)
+		<small><a href="http://carl.schelin.org/" title="http://carl.schelin.org/" class="user_homepage_display">Homepage</a>
+<a href="//slashdot.org/~Bigbutt/journal/" title="Wednesday April 28, 2010 @03:31PM" class="user_journal_display">Journal</a> </small>
+</span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_45828839"><p>Being recently divorced (last year), I started poking around at the various dating sites. Let's see, I don't smoke, I effectively don't drink alcohol (one beer a year doesn't make me a "drinker"), I'm a gamer (you'd be amazed at the number of women who think gamers are "childish"), and I'm not into sports (lots of women who go to football/baseball/hockey games). I do like going hiking in the mountains, snowshoes, skiing, I like bicycling. But I'm not a fitness fanatic which also eliminated quite a few women. I'm not religious which eliminated a few more.</p><p>After eliminating the mis-matches, I started paring down the other issues. Based on profiles, I got down to about 60 women in the area who might be an match based on shared interests. I received no replies to my e-mails but I did receive three unrelated emails. One from a women in Australia. One from a woman in Texas who had pictures of her daughter leaning on a car (which was a bit creepy). And one from a woman who plays guitars who appeared to be looking for a man in every city.</p><p>Amusingly on my birthday (hit 56), my match list dropped to zero. Every one of the women were looking for guys 55 or younger. So I expanded my search until I got to a couple of women in a 250 mile radius.</p><p>For some of us (a small percentage I suppose), the dating sites really aren't helping. And since women receive all the emails, they have the choice of who to go out with.</p><p>Humorously I was chosen to moderate pictures on okcupid for a bit. The guys do send some very suggestive emails (and some not so suggestive!).</p><p>[John]</p></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_45828839">
+<span class="ind"></span><a id="reply_link_45828839" class="btn link" href="//slashdot.org/comments.pl?sid=4615283&amp;op=Reply&amp;threshold=1&amp;commentsort=0&amp;mode=thread&amp;pid=45828839" onclick="D2.replyTo(45828839); return false;">Reply to This</a> 	<a href="#" class="comment_share_toggle btn link">Share</a>
+	<div class="comment_share sharethis-0 hide"><span class="au"></span>
+		<a class="janrain t" href="#" data-provider="twitter" data-message="Dating Sites by Bigbutt @slashdot" data-url="http://slashdot.org/comments.pl?sid=4615283&cid=45828839" data-title="Dating Sites">twitter</a>
+		<a class="janrain f" href="#" data-provider="facebook" data-message="Dating Sites by Bigbutt" data-url="http://slashdot.org/comments.pl?sid=4615283&cid=45828839" data-title="Dating Sites">facebook</a>
+		<a class="janrain l" href="#" data-provider="linkedin" data-message="Dating Sites by Bigbutt" data-url="http://slashdot.org/comments.pl?sid=4615283&cid=45828839" data-title="Dating Sites">linkedin</a>
+		<a class="g" href="http://plus.google.com/share?url=http://slashdot.org/comments.pl?sid=4615283%26cid=45828839" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><img src="//www.gstatic.com/images/icons/gplus-16.png" alt="Share on Google+"/></a>
+	</div>
+ <span class="ind"></span><a id="reply_link_45828839" title="Flag this comment as Inappropriate" class="ui-icon flag fright" href="//slashdot.org/comments.pl?sid=4615283&amp;op=flag&amp;threshold=1&amp;commentsort=0&amp;mode=thread&amp;pid=45828839" onclick="return false;">Flag as Inappropriate</a>
+</div>
+</div>
+
+<div id="replyto_45828839"></div>
+
+<ul id="group_45828839">
+	<li id="hiddens_45828839" class="hide"></li>
+</ul>
+
+<ul id="commtree_45828839"><li id="tree_45829143" class="comment oneline"><span class="ind"></span>
+<div id="comment_status_45829143" class="commentstatus"></div>
+<div id="comment_45829143" class="cw">
+	<div id="comment_top_45829143" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_45829143" name="comment_link_45829143" href="//slashdot.org/comments.pl?sid=4615283&amp;cid=45829143" onclick="return D2.setFocusComment(45829143)" >Re:</a>
+
+
+		 	<span id="comment_score_45829143" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 45829143); return false"><span class=opt>Score:</span>2</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~BringsApples">BringsApples</a>  <span class="uid"><a href="//slashdot.org/~BringsApples">(3418089)</a></span></a></span><span class="writes" style="display:none"> writes:</span>
+			<span class="otherdetails" id="comment_otherdetails_45829143"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_45829143">Sorry to hear that.  Being alone sucks, it's as simple as that.  The best thing that you can do is act like you have a shit-ton of money (somehow) and more than likely, you'll get some 20-something-yo chick.<br> <br>
+
+Happiness is something that's you can achieve however, and it has nothing to do with other people.  Best of luck either way.</div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_45829143">
+
+</div>
+</div>
+
+<div id="replyto_45829143"></div>
+
+<ul id="group_45829143">
+	<li id="hiddens_45829143" class="hide"></li>
+</ul>
+
+</li><li id="tree_45829653" class="comment oneline"><span class="ind"></span>
+<div id="comment_status_45829653" class="commentstatus"></div>
+<div id="comment_45829653" class="cw">
+	<div id="comment_top_45829653" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_45829653" name="comment_link_45829653" href="//slashdot.org/comments.pl?sid=4615283&amp;cid=45829653" onclick="return D2.setFocusComment(45829653)" >Re:</a>
+
+
+		 	<span id="comment_score_45829653" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 45829653); return false"><span class=opt>Score:</span>2</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~Grishnakh">Grishnakh</a>  <span class="uid"><a href="//slashdot.org/~Grishnakh">(216268)</a></span></a></span><span class="writes" style="display:none"> writes:</span>
+			<span class="otherdetails" id="comment_otherdetails_45829653"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_45829653"><p><span class="substr"> </span> <i>Being recently divorced (last year), I started poking around at the various dating sites. Let's see, I don't smoke, I effectively don't drink alcohol (one beer a year doesn't make me a "drinker"), I'm a gamer (you'd be amazed at the number of women who think gamers are "childish"), and I'm not into sports (lots of women who go to football/baseball/hockey games). I do like going hiking in the mountains, snowshoes, skiing, I like bicycling. But I'm not a fitness fanatic which also eliminated quite a few women</i></p></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_45829653">
+
+</div>
+</div>
+
+<div id="replyto_45829653"></div>
+
+<ul id="group_45829653">
+	<li id="hiddens_45829653" class="hide"></li>
+</ul>
+
+<ul id="commtree_45829653"><li id="tree_45829809" class="comment oneline"><span class="ind"></span>
+<div id="comment_status_45829809" class="commentstatus"></div>
+<div id="comment_45829809" class="cw">
+	<div id="comment_top_45829809" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_45829809" name="comment_link_45829809" href="//slashdot.org/comments.pl?sid=4615283&amp;cid=45829809" onclick="return D2.setFocusComment(45829809)" >Re:</a>
+
+
+		 	<span id="comment_score_45829809" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 45829809); return false"><span class=opt>Score:</span>2</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~Jah-Wren+Ryel">Jah-Wren Ryel</a>  <span class="uid"><a href="//slashdot.org/~Jah-Wren+Ryel">(80510)</a></span></a></span><span class="writes" style="display:none"> writes:</span>
+			<span class="otherdetails" id="comment_otherdetails_45829809"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_45829809"><p><div class="quote"><p>This is probably part of your problem. I hate to say it, but you're too old for online dating: women in your age group aren't very internet-savvy,</p></div><p>Bingo.   There may be plenty of fish in the sea, but they haven't been there long.</p><p>On the plus side for the OP, the older you get, the more the female:male ratio goes up in the real world.</p></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_45829809">
+
+</div>
+</div>
+
+<div id="replyto_45829809"></div>
+
+<ul id="group_45829809">
+	<li id="hiddens_45829809" class="hide"></li>
+</ul>
+
+</li></ul></li><li id="tree_45829945" class="comment oneline"><span class="ind"></span>
+<div id="comment_status_45829945" class="commentstatus"></div>
+<div id="comment_45829945" class="cw">
+	<div id="comment_top_45829945" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_45829945" name="comment_link_45829945" href="//slashdot.org/comments.pl?sid=4615283&amp;cid=45829945" onclick="return D2.setFocusComment(45829945)" >Re:</a>
+
+
+		 	<span id="comment_score_45829945" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 45829945); return false"><span class=opt>Score:</span>2</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~Grishnakh">Grishnakh</a>  <span class="uid"><a href="//slashdot.org/~Grishnakh">(216268)</a></span></a></span><span class="writes" style="display:none"> writes:</span>
+			<span class="otherdetails" id="comment_otherdetails_45829945"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_45829945"><p>Actually, I just thought of something for you: have you tried Meetup.com?  Around my area, there's tons of hiking/outdoor groups on Meetup, and a lot of people (of all ages) seem to use these hiking groups as singles mixers.  You don't have to be single to go on hikes, but a lot of the people I meet on there seem to be.  I've met lots of older (50+) women on the hikes I've been on.</p></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_45829945">
+
+</div>
+</div>
+
+<div id="replyto_45829945"></div>
+
+<ul id="group_45829945">
+	<li id="hiddens_45829945" class="hide"></li>
+</ul>
+
+</li><li id="tree_45829957" class="comment oneline"><span class="ind"></span>
+<div id="comment_status_45829957" class="commentstatus"></div>
+<div id="comment_45829957" class="cw">
+	<div id="comment_top_45829957" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_45829957" name="comment_link_45829957" href="//slashdot.org/comments.pl?sid=4615283&amp;cid=45829957" onclick="return D2.setFocusComment(45829957)" >Dating sites and age....</a>
+
+
+		 	<span id="comment_score_45829957" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 45829957); return false"><span class=opt>Score:</span>2</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~King_TJ">King_TJ</a>  <span class="uid"><a href="//slashdot.org/~King_TJ">(85913)</a></span></a></span><span class="writes" style="display:none"> writes:</span>
+			<span class="otherdetails" id="comment_otherdetails_45829957"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_45829957"><p>I'm in my 40's and married, but back when I tried seriously using a few of the dating sites (never was willing to pay for the commercial ones, but gave sites like PoF and OKCupid a shot) -- I ran across a general theme for the individual who'd find the most success there. Basically, the formula seemed to be:</p><p>1. Into sports<br>2. Posted at least one sexy/arousing type photo instead of only head-shots<br>3. Somewhere in the "under 35" age range<br>4. Liked to "go out for a few beers/drinks" (but not "drink heavily", of co<span class="substr"> </span></p></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_45829957">
+
+</div>
+</div>
+
+<div id="replyto_45829957"></div>
+
+<ul id="group_45829957">
+	<li id="hiddens_45829957" class="hide"></li>
+</ul>
+
+</li><li id="tree_45829995" class="comment oneline"><span class="ind"></span>
+<div id="comment_status_45829995" class="commentstatus"></div>
+<div id="comment_45829995" class="cw">
+	<div id="comment_top_45829995" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_45829995" name="comment_link_45829995" href="//slashdot.org/comments.pl?sid=4615283&amp;cid=45829995" onclick="return D2.setFocusComment(45829995)" >Re:</a>
+
+
+		 	<span id="comment_score_45829995" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 45829995); return false"><span class=opt>Score:</span>1</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~ThatsDrDangerToYou">ThatsDrDangerToYou</a>  <span class="uid"><a href="//slashdot.org/~ThatsDrDangerToYou">(3480047)</a></span></a></span><span class="writes" style="display:none"> writes:</span>
+			<span class="otherdetails" id="comment_otherdetails_45829995"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_45829995">Hmm.  OK, try this:
+
+- Go easy on the "I'm a gamer" thing.  Women of a certain age will rarely "get it", so you can mention it in passing on your profile, but wait until you meet to fully divulge.
+- New hobby!  I highly recommend yoga, not only for the exercise, but the m/f ratio is always going to be in your favor.
+- One thing that I discovered is that women really appreciate a guy who can hold a conversation and be interesting, interested, and not a jerk.  Apparently this is not so common.  So... try Toas</div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_45829995">
+
+</div>
+</div>
+
+<div id="replyto_45829995"></div>
+
+<ul id="group_45829995">
+	<li id="hiddens_45829995" class="hide"></li>
+</ul>
+
+</li></ul></li><li id="tree_45828883" class="comment hidden"><span class="ind"></span>
+<div id="comment_status_45828883" class="commentstatus"></div>
+<div id="comment_45828883" class="cw">
+</div>
+
+<div id="replyto_45828883"></div>
+
+<ul id="group_45828883">
+	<li id="hiddens_45828883" class="hide"></li>
+</ul>
+
+</li><li id="tree_45828889" class="comment hidden"><span class="ind"></span>
+<div id="comment_status_45828889" class="commentstatus"></div>
+<div id="comment_45828889" class="cw">
+</div>
+
+<div id="replyto_45828889"></div>
+
+<ul id="group_45828889">
+	<li id="hiddens_45828889" class="hide"></li>
+</ul>
+
+<ul id="commtree_45828889"><li id="tree_45829591" class="comment hidden"><span class="ind"></span>
+<div id="comment_status_45829591" class="commentstatus"></div>
+<div id="comment_45829591" class="cw">
+</div>
+
+<div id="replyto_45829591"></div>
+
+<ul id="group_45829591">
+	<li id="hiddens_45829591" class="hide"></li>
+</ul>
+
+</li><li id="hidestring_45828889"><noscript><b class='more'><span class="ind"></span><a href="//slashdot.org/comments.pl?sid=4615283&amp;threshold=-1&amp;commentsort=0&amp;mode=thread&amp;pid=45828889">1 reply</a> beneath your current threshold.</b></noscript></li></ul></li><li id="tree_45828963" class="comment hidden"><span class="ind"></span>
+<div id="comment_status_45828963" class="commentstatus"></div>
+<div id="comment_45828963" class="cw">
+</div>
+
+<div id="replyto_45828963"></div>
+
+<ul id="group_45828963">
+	<li id="hiddens_45828963" class="hide"></li>
+</ul>
+
+</li><li id="tree_45829001" class="comment hidden"><span class="ind"></span>
+<div id="comment_status_45829001" class="commentstatus"></div>
+<div id="comment_45829001" class="cw">
+</div>
+
+<div id="replyto_45829001"></div>
+
+<ul id="group_45829001">
+	<li id="hiddens_45829001" class="hide"></li>
+</ul>
+
+</li><li id="tree_45829193" class="comment oneline"><span class="ind"></span>
+<div id="comment_status_45829193" class="commentstatus"></div>
+<div id="comment_45829193" class="cw">
+	<div id="comment_top_45829193" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_45829193" name="comment_link_45829193" href="//slashdot.org/comments.pl?sid=4615283&amp;cid=45829193" onclick="return D2.setFocusComment(45829193)" >Many uses</a>
+
+
+		 	<span id="comment_score_45829193" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 45829193); return false"><span class=opt>Score:</span>2</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~nospam007">nospam007</a>  <span class="uid"><a href="//slashdot.org/~nospam007">(722110)</a></span></a> <a href="/faq/subscriptions.shtml#subscription_other_advantages">*</a></span><span class="writes" style="display:none"> writes:</span>
+			<span class="otherdetails" id="comment_otherdetails_45829193"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_45829193"><p>"His algorithm takes into account both a user's tastes (in an approach similar to the Netflix recommendation engine) and their attractiveness (by analyzing how many responses they get) &mdash; enabling the machine to 'learn' and hence propose higher potential matches."</p><p>I'd send them a hiring offer for a Photoshop Job, but that's just me.</p></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_45829193">
+
+</div>
+</div>
+
+<div id="replyto_45829193"></div>
+
+<ul id="group_45829193">
+	<li id="hiddens_45829193" class="hide"></li>
+</ul>
+
+</li><li id="tree_45829271" class="comment hidden"><span class="ind"></span>
+<div id="comment_status_45829271" class="commentstatus"></div>
+<div id="comment_45829271" class="cw">
+</div>
+
+<div id="replyto_45829271"></div>
+
+<ul id="group_45829271">
+	<li id="hiddens_45829271" class="hide"></li>
+</ul>
+
+</li><li id="tree_45829375" class="comment oneline"><span class="ind"></span>
+<div id="comment_status_45829375" class="commentstatus"></div>
+<div id="comment_45829375" class="cw">
+	<div id="comment_top_45829375" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_45829375" name="comment_link_45829375" href="//slashdot.org/comments.pl?sid=4615283&amp;cid=45829375" onclick="return D2.setFocusComment(45829375)" >Could be helpful</a>
+
+
+		 	<span id="comment_score_45829375" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 45829375); return false"><span class=opt>Score:</span>2</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~wcrowe">wcrowe</a>  <span class="uid"><a href="//slashdot.org/~wcrowe">(94389)</a></span></a></span><span class="writes" style="display:none"> writes:</span>
+			<span class="otherdetails" id="comment_otherdetails_45829375"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_45829375"><p>So, in other words, the machine will tell you, "Hey dude, you might as well talk to this homely girl, because we've analyzed your interests and your apparent attractiveness and you're not going to do any better than this".</p></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_45829375">
+
+</div>
+</div>
+
+<div id="replyto_45829375"></div>
+
+<ul id="group_45829375">
+	<li id="hiddens_45829375" class="hide"></li>
+</ul>
+
+</li><li id="tree_45829387" class="comment hidden"><span class="ind"></span>
+<div id="comment_status_45829387" class="commentstatus"></div>
+<div id="comment_45829387" class="cw">
+</div>
+
+<div id="replyto_45829387"></div>
+
+<ul id="group_45829387">
+	<li id="hiddens_45829387" class="hide"></li>
+</ul>
+
+<ul id="commtree_45829387"><li id="tree_45829469" class="comment hidden"><span class="ind"></span>
+<div id="comment_status_45829469" class="commentstatus"></div>
+<div id="comment_45829469" class="cw">
+</div>
+
+<div id="replyto_45829469"></div>
+
+<ul id="group_45829469">
+	<li id="hiddens_45829469" class="hide"></li>
+</ul>
+
+</li><li id="hidestring_45829387"><noscript><b class='more'><span class="ind"></span><a href="//slashdot.org/comments.pl?sid=4615283&amp;threshold=-1&amp;commentsort=0&amp;mode=thread&amp;pid=45829387">1 reply</a> beneath your current threshold.</b></noscript></li></ul></li><li id="tree_45829629" class="comment oneline"><span class="ind"></span>
+<div id="comment_status_45829629" class="commentstatus"></div>
+<div id="comment_45829629" class="cw">
+	<div id="comment_top_45829629" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_45829629" name="comment_link_45829629" href="//slashdot.org/comments.pl?sid=4615283&amp;cid=45829629" onclick="return D2.setFocusComment(45829629)" >Hello, miss.</a>
+
+
+		 	<span id="comment_score_45829629" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 45829629); return false"><span class=opt>Score:</span>2</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~PPH">PPH</a>  <span class="uid"><a href="//slashdot.org/~PPH">(736903)</a></span></a></span><span class="writes" style="display:none"> writes:</span>
+			<span class="otherdetails" id="comment_otherdetails_45829629"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_45829629"><p>That's a nice ${ANATOMICAL_PART} you've got there.</p></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_45829629">
+
+</div>
+</div>
+
+<div id="replyto_45829629"></div>
+
+<ul id="group_45829629">
+	<li id="hiddens_45829629" class="hide"></li>
+</ul>
+
+</li><li id="tree_45829731" class="comment oneline"><span class="ind"></span>
+<div id="comment_status_45829731" class="commentstatus"></div>
+<div id="comment_45829731" class="cw">
+	<div id="comment_top_45829731" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_45829731" name="comment_link_45829731" href="//slashdot.org/comments.pl?sid=4615283&amp;cid=45829731" onclick="return D2.setFocusComment(45829731)" >So here comes the SEO-like rush for attractiveness</a>
+
+
+		 	<span id="comment_score_45829731" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 45829731); return false"><span class=opt>Score:</span>2</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~AlienSexist">AlienSexist</a>  <span class="uid"><a href="//slashdot.org/~AlienSexist">(686923)</a></span></a></span><span class="writes" style="display:none"> writes:</span>
+			<span class="otherdetails" id="comment_otherdetails_45829731"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_45829731">I'm guessing that Search Engine Optimization (SEO) techniques would come into play whereby geeks could artificially inflate their relevance/attractiveness to game the system.  Once again the nerds get the supermodels... right?</div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_45829731">
+
+</div>
+</div>
+
+<div id="replyto_45829731"></div>
+
+<ul id="group_45829731">
+	<li id="hiddens_45829731" class="hide"></li>
+</ul>
+
+</li><li id="tree_45829737" class="comment hidden"><span class="ind"></span>
+<div id="comment_status_45829737" class="commentstatus"></div>
+<div id="comment_45829737" class="cw">
+</div>
+
+<div id="replyto_45829737"></div>
+
+<ul id="group_45829737">
+	<li id="hiddens_45829737" class="hide"></li>
+</ul>
+
+</li><li id="tree_45830031" class="comment hidden"><span class="ind"></span>
+<div id="comment_status_45830031" class="commentstatus"></div>
+<div id="comment_45830031" class="cw">
+</div>
+
+<div id="replyto_45830031"></div>
+
+<ul id="group_45830031">
+	<li id="hiddens_45830031" class="hide"></li>
+</ul>
+
+</li><li id="hidestring_0"><noscript><b class='more'><span class="ind"></span><a href="//slashdot.org/comments.pl?sid=4615283&amp;threshold=-1&amp;commentsort=0&amp;mode=thread&amp;pid=0">14 replies</a> beneath your current threshold.</b></noscript></li>
+			<li id="roothiddens" class="hide"></li>
+		</ul>
+
+
+
+
+
+<noscript><p><b>There may be more comments in this discussion. Without JavaScript enabled, you might want to <a href="//slashdot.org/users.pl?op=editcomm">turn on Classic Discussion System</a> in your preferences instead.</b></p></noscript>
+<div id="discussion_buttons" class="clearfix">
+
+
+
+
+
+
+</div>
+
+
+<div class="newcmnt"><div id="replyto_0"></div></div>
+
+
+	<script type="text/javascript">
+<!--
+		D2.currents()['hidden']   = 30;
+		D2.currents()['full']     = 7;
+		D2.currents()['oneline']  = 49;
+		// D2.currents_total(86);
+
+		D2.abbrev_comments({45829653:3,45828867:521,45829393:515,45829401:521,45830155:511,45829995:512,45829155:3,45830241:512,45829443:3,45829559:515,45829957:534,45829947:512,45829355:3,45829289:3});
+		D2.noshow_comments([45828581,45828645,45828857,45828701,45830047,45828721,45828813,45830177,45828937,45829019,45829235,45829579,45828689,45828697,45829285,45829077,45830113,45828767,45828793,45828795,45828883,45828889,45829591,45828963,45829001,45829271,45829387,45829469,45829737,45830031]);
+		D2.pieces_comments([45829401,45830151,45830155,45828977,45829175,45829637,45829355,45829671,45830073,45829393,45829565,45829947,45828849,45828867,45828899,45829101,45829151,45829975,45829289,45828619,45828627,45828643,45828815,45828935,45829415,45829619,45830241,45828659,45828699,45828951,45829155,45829443,45829503,45829659,45828661,45828955,45829907,45828773,45829559,45829143,45829653,45829809,45829945,45829957,45829995,45829193,45829375,45829629,45829731]);
+		D2.init_hiddens([45828645,45828581,45828705,45828867,45828601,45829415,45828955,45828713,45828889,45829387,0]);
+
+		D2.finishLoading();
+
+
+		if (D2.thresh_totals()[6][6][1] == 0) {
+			D2.replyTo(0, 1);
+		}
+
+
+//-->
+	</script>
+
+
+</div>
+
+</section>
+									   </div>
+									</section>
+								     </section>
+								  </div>
+
+
+
+<script type="text/javascript">
+$(function(){
+$('#firehose-filter').
+	focus(function(event){
+		gFocusedText = this;
+	}).
+	blur(function(event){
+		if ( gFocusedText === this ) {
+			gFocusedText = null;
+		}
+	});
+
+
+apply_updates_when(		'at-end', true);
+});
+</script>
+
+<!-- body end --></section>
+
+
+
+
+
+<footer id="fhft" class="grid_24 nf aoc">
+	<div id="logo_nf" class="fleft">
+		<a href="//slashdot.org"><span>Slashdot</span></a>
+	</div>
+	<nav role="firehose footer">
+
+
+
+
+
+
+
+					   <span class="ind"></span><a class="btn first" href="//slashdot.org/comments.pl?sid=4615283&amp;op=reply&amp;threshold=1&amp;commentsort=0&amp;mode=thread&amp;pid=" onclick="D2.replyTo(0); return false;">Post</a>
+
+				<a class="btn hide" id="footer_moderate_button">Moderate</a>
+				<a class="btn hide" id="footer_moderatorhelp_button">Moderator Help</a>
+				<a class="btn hide" id="footer_delete_button" title="Checked comments will be deleted.">Delete</a>
+				<script>
+					(function($){
+						var old_moderate_btn = $("#discussion_moderate_button");
+						if (old_moderate_btn.length) {
+							var moderate_btn = $("#footer_moderate_button");
+							moderate_btn.click(
+								function(){old_moderate_btn.click()}
+							);
+							moderate_btn.removeClass('hide');
+						}
+
+						var old_moderatorhelp_btn = $("#discussion_moderatorhelp_button");
+						if (old_moderatorhelp_btn.length) {
+							var moderatorhelp_btn = $("#footer_moderatorhelp_button");
+							moderatorhelp_btn.click(
+								function(){old_moderatorhelp_btn.click()}
+							);
+							moderatorhelp_btn.attr(
+								'href', old_moderatorhelp_btn.attr('href')
+							);
+							moderatorhelp_btn.removeClass('hide');
+						}
+
+						var old_delete_btn = $("#discussion_delete_button");
+						if (old_delete_btn.length) {
+							var delete_btn = $("#footer_delete_button");
+							delete_btn.click(
+								function(){old_delete_btn.click()}
+							);
+							delete_btn.removeClass('hide');
+						}
+
+						$('#discussion_buttons').addClass('hide');
+					})(Slash.jQuery); // (function($){
+				</script>
+				<ul class="fleft">
+
+					<li class="fleft selected">
+   						<span class="nbutton btn hide link reset" id="more_comments_button"><a href="#" onclick="D2.ajaxFetchComments(0,1); return false"><span id="more_comments_num_a" class="hide">Get more comments</span></a></span>
+					</li>
+
+
+
+					<li class="fleft"><span class="loadedcommentcnt">86</span> of <span class="totalcommentcnt">86</span> loaded</li>
+
+				</ul>
+
+					<script type="text/javascript">D2.finishLoading()</script>
+
+
+<!-- below markup is for D1
+				<ul class="fleft">
+					<li class="fleft"><a href="">Moderator help</a></li>
+					<li class="fleft"><a href="">Delete</a></li>
+					<li class="fleft"><a href="">?</a></li>
+
+					<li class="fleft"><a href="">__1_of_10_loaded__</a></li>
+
+				</ul>
+-->
+
+
+
+
+        <ul class="fright submitstory">
+            <li class="fright"><a href="/submit">Submit<span class="opt"> Story</span></a></li>
+        </ul>
+	</nav>
+</footer>
+	<section class="bq"><blockquote class="msg grid_24" cite="http://slashdot.org"><p>The only function of economic forecasting is to make astrology look respectable.
+		-- John Kenneth Galbraith</p><span class="slant"></span></blockquote></section>
+<footer id="ft" class="grid_24">
+		<nav class="grid_10" role="footer">
+		    <ul>
+			<li><a href="//slashdot.org/faq">FAQ</a></li>
+			<li><a href="//slashdot.org/archive.pl">Story Archive</a></li>
+			<li><a href="//slashdot.org/hof.shtml">Hall of Fame</a></li>
+			<li><a href="http://slashdotmedia.com/advertising-and-marketing-services/">Advertising</a></li>
+			<li><a href="http://slashdot.org/job_board.pl">Jobs</a></li>
+			<li><a href="http://slashdotmedia.com/terms-of-use/">Terms</a></li>
+			<li><a href="http://slashdotmedia.com/privacy-statement/">Privacy</a></li>
+			<li id="teconsent"></li>
+			<li><a href="http://slashdotmedia.com/opt-out-choices/">Opt Out Choices</li>
+			<li><a href="//slashdot.org/faq/slashmeta.shtml">About</a></li>
+			<li><a href="mailto:feedback@slashdot.org">Feedback</a></li>
+			<li><a href="http://slashdot.jp">Slashdot Japan</a></li>
+			<li><a href="#" onclick="set_mobile_pref('mobile',1);return false;">Mobile View</a></li>
+			<li><a href="//slashdot.org/?usebeta=1">Slashdot Beta</a></li>
+		    </ul>
+		</nav>
+
+<br>
+
+	        <div class="grid_14 tright tm">Trademarks property of their respective owners. Comments owned by the poster. <span class="nobr">Copyright &copy; 2013 Dice. All Rights Reserved.</span> <span class="nobr">Slashdot is a <a href="http://www.diceholdingsinc.com/phoenix.zhtml?c=211152&p=irol-landing" title="The Mother Ship">Dice Holdings, Inc.</a> service.</span></div>
+</footer>
+
+
+<div class="overlay"></div>
+<div class="modal-box">
+    <a href="#" id="close-modal">Close</a>
+    <article class="modal-content">
+    </article>
+    <footer>
+</div>
+
+
+
+
+<div id="modal_cover" class="hide" onclick="hide_modal_box(); return false;"></div>
+<div id="modal_box" class="hide">
+      <div id="modal_box_content"></div>
+      <header class="n">
+                  <span class="fadeout"></span>
+                  <span class="fadeoutfade"></span>
+		  <span class="pf"><a class="ico close" onclick="hide_modal_box(); return false;" href="#"><span>Close</span></a></span>
+		  <h3 class="pf"><div id="logo"><a href="//slashdot.org">Slashdot</a></div><span id="preference_title"></span></h3>
+      </header>
+</div>
+
+<script type="text/javascript">
+COMSCORE.beacon({
+  c1:2,
+  c2:6035546,
+  c3:"",
+  c4:"",
+  c5:"",
+  c6:"",
+  c15:""
+});
+</script>
+<noscript><img src="http://b.scorecardresearch.com/p?c1=2&amp;c2=6035546&amp;c3=&amp;c4=&amp;c5=&amp;c6=&amp;c15=&amp;cj=1" alt="comScore2"></noscript>
+
+
+<!-- Google Remarketing tag -->
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 1002083962;
+var google_conversion_label = "G_uGCOaBlAQQ-qzq3QM";
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+/* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1002083962/?value=0&amp;label=G_uGCOaBlAQQ-qzq3QM&amp;guid=ON&amp;script=0"/>
+</div>
+</noscript>
+<script id="after-content" type="text/javascript">
+(function( $, fn, console ){
+	$ && fn && $(function(){ fn($, console); });
+})(window.jQuery, window.pageload_done, window.console);
+</script>
+
+<div class="busy genericspinner hide"><span>Working...</span></div>
+<script>
+  if(typeof(Storage)!=="undefined"){
+		window.scrollTo(0,sessionStorage.scrollPos);
+			$(window).scroll(function () {
+			//You've scrolled this much:
+			sessionStorage.scrollPos = $(window).scrollTop();
+		});
+	}
+	$(function(){
+		$('a').click(function(){
+			delete sessionStorage.scrollPos;
+		})
+	});
+	// window.onbeforeunload = function () {
+	// 	console.log('bakc button clicked');
+	// 	delete sessionStorage.scrollPos;
+	// }
+	window.onpopstate=function() {
+		delete sessionStorage.scrollPos;
+	}
+</script>
+
+<!-- For Interstitial Modal -->
+<!--This is a hack.  It may seem I am "enabling interstitials for everyone" on the story page, but not really.
+We are reusing some of the interstitial code to count site exits from the story page. The control of whether
+interstitials are actually displayed on exit has been pushed further down into interstitital.js (hence the
+differently-named var here.  In our proverbial "Copious Spare Time", we should impelement this better.-->
+
+<div class="interstitial_content">
+</div>
+<!--SLASH-3947  Use TrustE Consent Manager to manage the setting of third-party advertiser cookies-->
+
+	<script type="text/javascript" src="//consent.truste.com/notice?domain=slashdot.org&c=teconsent&text=true"></script>
+
+</body>
+</html>
