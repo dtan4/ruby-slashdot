@@ -5,6 +5,75 @@ module Slashdot
   describe Article do
     ARTICLE_URL = "http://slashdot.org/story/13/12/31/1437227"
 
+    describe "#initialize" do
+      context "with no argument" do
+        let(:article) { Slashdot::Article.new }
+
+        it "should set 0 to id" do
+          expect(article.id).to eq 0
+        end
+
+        it "should set empty to title" do
+          expect(article.title).to eq ""
+        end
+
+        it "should set empty to author" do
+          expect(article.author).to eq ""
+        end
+
+        it "should set nil to postdate" do
+          expect(article.postdate).to be_nil
+        end
+
+        it "should set empty to department" do
+          expect(article.department).to eq ""
+        end
+
+        it "should set empty to url" do
+          expect(article.url).to eq ""
+        end
+
+        it "should set empty to body" do
+          expect(article.body).to eq ""
+        end
+      end
+
+      context "with arguments" do
+        let(:article) do
+          Slashdot::Article.new(id: 123456, title: "title", author: "author",
+                                postdate: Time.parse("2014/01/01"),
+                                department: "department", url: "url",
+                                body: "body")
+        end
+
+        it "should set given value to id" do
+          expect(article.id).to eq 123456
+        end
+
+        it "should set given value to title" do
+          expect(article.title).to eq "title"
+        end
+
+        it "should set given value to author" do
+          expect(article.author).to eq "author"
+        end
+
+        it "should set given value to postdate" do
+          expect(article.postdate).to eq Time.parse("2014/01/01")
+        end
+
+        it "should set given value to department" do
+          expect(article.department).to eq "department"
+        end
+
+        it "should set given value to url" do
+          expect(article.url).to eq "url"
+        end
+
+        it "should set given value to body" do
+          expect(article.body).to eq "body"
+        end
+      end
     end
 
     describe "#get" do
