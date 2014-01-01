@@ -6,7 +6,7 @@ module Slashdot
   class Article
     attr_reader :id, :title, :author, :postdate, :department, :url, :body
 
-    def initialize(url)
+    def get(url)
       doc = Nokogiri::HTML.parse(open(url).read)
       @id = get_id(doc)
       @title = get_title(doc)
