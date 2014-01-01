@@ -10,38 +10,43 @@ module Slashdot
         .to_return(body: open(File.expand_path("../../fixtures/article", __FILE__)).read)
     end
 
-    describe "#get" do
-      let(:article) { Slashdot::Article.new }
-
+    describe "#initialize" do
       context "with valid URL" do
-        before { article.get(ARTICLE_URL) }
+        subject { Slashdot::Article.new(ARTICLE_URL) }
 
+        its(:id) { should be_kind_of Integer }
         it "should get id" do
-          expect(article.id).to eq 54845787
+          expect(subject.id).to eq 54845787
         end
 
+        its(:title) { should be_kind_of String }
         it "should get title" do
-          expect(article.title).to eq "How Machine Learning Can Transform Online Dating"
+          expect(subject.title).to eq "How Machine Learning Can Transform Online Dating"
         end
 
+        its(:author) { should be_kind_of String }
         it "should get author" do
-          expect(article.author).to eq "timothy"
+          expect(subject.author).to eq "timothy"
         end
 
+        its(:postdate) { should be_kind_of Time }
         it "should get postdate" do
-          expect(article.postdate).to eq Time.parse("on Tuesday December 31, 2013 @09:37AM")
+          expect(subject.postdate).to eq Time.parse("on Tuesday December 31, 2013 @09:37AM")
         end
 
+        its(:department) { should be_kind_of String }
         it "should get department" do
-          expect(article.department).to eq "the it-can-please-hurry-up-while-I'm-in-my-30s dept."
+          expect(subject.department).to eq "the it-can-please-hurry-up-while-I'm-in-my-30s dept."
         end
 
+        its(:url) { should be_kind_of String }
         it "should get url" do
-          expect(article.url).to eq "http://slashdot.org/story/13/12/31/1437227/how-machine-learning-can-transform-online-dating"
+          expect(subject.url).to eq "http://slashdot.org/story/13/12/31/1437227/how-machine-learning-can-transform-online-dating"
         end
 
+        its(:body) { should be_kind_of String }
         it "should get body" do
-          expect(article.body).to eq <<-EOS.strip
+          expect(subject.body).to eq <<-EOS.strip
 First time accepted submitter hrb1979 writes <i>"Thought I'd share <a href="http://www.datascienceweekly.org/blog/7-how-machine-learning-can-transform-online-dating-kang-zhao-interview">an interview</a> with <a href="http://tippie.uiowa.edu/people/profile/profile.aspx?id=1250744">Kang Zhao</a> — the professor behind the machine learning algorithm which could transform online dating. His algorithm takes into account both a user's tastes (in an approach similar to the Netflix recommendation engine) and their attractiveness (by analyzing how many responses they get) — enabling the machine to 'learn' and hence propose higher potential matches. His research was recently covered in both <a href="http://www.forbes.com/sites/daviddisalvo/2013/12/07/why-the-future-of-online-dating-relies-on-ignoring-you">a Forbes' article</a> and the <a href="http://www.technologyreview.com/view/521826/the-online-dating-engine-that-assesses-your-taste-in-the-opposite-sex-and-whether-they">MIT Technology Review</a>, though this interview provides more depth and color."</i>
           EOS
         end
