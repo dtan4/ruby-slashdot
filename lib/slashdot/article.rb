@@ -15,6 +15,7 @@ module Slashdot
       @department = get_department(doc)
       @url = get_url(doc)
       @body = get_body(doc)
+      self
     end
 
     private
