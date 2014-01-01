@@ -16,8 +16,28 @@ module Slashdot
       context "with valid URL" do
         before { article.get(ARTICLE_URL) }
 
+        it "should get id" do
+          expect(article.id).to eq 54845787
+        end
+
         it "should get title" do
           expect(article.title).to eq "How Machine Learning Can Transform Online Dating"
+        end
+
+        it "should get author" do
+          expect(article.author).to eq "timothy"
+        end
+
+        it "should get postdate" do
+          expect(article.postdate).to eq Time.parse("on Tuesday December 31, 2013 @09:37AM")
+        end
+
+        it "should get department" do
+          expect(article.department).to eq "the it-can-please-hurry-up-while-I'm-in-my-30s dept."
+        end
+
+        it "should get url" do
+          expect(article.url).to eq "http://slashdot.org/story/13/12/31/1437227/how-machine-learning-can-transform-online-dating"
         end
 
         it "should get body" do
